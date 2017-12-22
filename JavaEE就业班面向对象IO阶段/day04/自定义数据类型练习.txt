@@ -1,0 +1,167 @@
+ 
+ int 
+
+ String 
+
+ Student
+
+ ArrayList<String>
+
+
+ 自定义数据类型练习 
+
+    因为 我们 开发 叫做面向对象开发  
+      这种思想 符合平时思考习惯   
+         如果别人具备了这个功能  
+	     我自己就不再去实现这个功能 
+	       通过这个人帮助我完成 
+      在我们代码中 
+         其实 主要体现在 调用方法上 
+
+	 String 
+	   boolean equals(Object obj)
+
+	   String s = "hello";
+	   String s2 = "world";
+
+	   boolean b = s.equals(s2);
+
+	   方法调用两个原则
+	     1： 参数上  要什么类型 就传递什么类型
+	     2： 返回值上 返回什么 使用什么接收
+
+  一 有关参数 传递问题
+
+      关于基本类型 
+        public void method(int i){}
+      
+      调用
+        
+	method(10);
+
+	int i = 20;
+	method(i);
+
+	byte b = 10;
+	method(b);
+
+      1:如果参数列表上 是一个 类 类型 调用时候参数 传递什么？
+
+        public void show(Student stu){}
+
+	调用
+         Student stu = new Student();
+	 show(stu);
+
+	 show(new Student());
+
+	 结论
+	   如果参数列表上 是一个 类 类型 调用时候参数 传递该类型可以接收的 对象（该类型对象）
+
+      2:如果参数列表上 是一个 抽象类 类型 调用时候参数 传递什么？
+
+         Animal抽象类  Cat Dog Tiger...具体子类
+
+	 public void feedAnimal(Animal a){}
+
+	 调用
+
+	 feedAnimal();
+	 //按照 我的思路 要什么类型给什么类型对象  
+	 // 要的是Animal类型  new Animal() 这是错误 便以失败
+	    //抽象类无法创建对象  那么我们这里有需要这种类型 
+	    // 我们学习过多态   父类引用指向子类对象
+	        //  子类类型对象  可以提升为 父类类型(向上转型)
+		//所以 我们可以这样写 Animal a = new Cat();
+	Animal a = new Cat();
+	feedAnimal(a);
+
+	feedAnimal(new Cat());
+
+	Cat c = new Cat();
+	feedAnimal(c);
+	结论
+	   如果参数列表上 是一个 抽象类 类型 调用时候参数 传递 其具体的子类对象
+
+
+      3:如果参数列表上 是一个 接口 类型 调用时候参数 传递什么？
+         USB是接口   Mouse  Keyboard是实现类
+
+	 public void useUSB(USB u){}
+
+	 调用
+	 useUSB(new USB());
+	 //这样是错误的  虽然说要什么类型给什么类型 
+	 //直接new USB错误的 因为接口无法直接创建对象 
+	 // 通过我们学习过的多态思想  
+	 // 父接口引用指向子类对象  子类类型对象  可以提升为 父类类型(向上转型)
+	 //可以这样写   
+         USB u = new Mouse();
+	 useUSB(u);
+
+         结论
+	   如果参数列表上 是一个 接口 类型 调用时候参数 传递 其具体的实现类对象
+
+
+二  有关返回值问题  
+
+     基本类型 
+       
+       public int getMax(){
+           
+          // int i = 10;
+	  // return i;
+           char c = '0';
+	   return c;
+
+       }
+
+       return 这里写啥  
+        
+       返回的是 int可以接收的类型
+
+
+
+       1:如果方法的返回值类型是类 类型  那么 return的是什么呢  
+
+         public Student getGoodStu(){
+	     
+             //Student stu = new Student();
+	     //return stu;
+	     
+	     return new Student();
+	 }
+
+	 返回 Student类型 对象
+	      Studnet类型可以接收的对象
+
+         结论
+	   如果方法的返回值类型是类 类型  那么 return的是 该类可以接收的类型对象  (该类型对象)
+
+        2:如果方法的返回值类型是 抽象类 类型  那么 return的是什么呢 
+	
+	  public Animal getAnimal(){
+	      
+	      Animal a = new Cat();
+	      return a;
+
+	      return new Cat();
+	  }
+
+	  这里 return new Animal()可以吗  因为这个动物概念是抽象的  
+	   需要给具体的动物 
+	   比如给只鸡  猫 狗 。。。
+
+	   
+         如果方法的返回值类型是 抽象类 类型  那么 return的是该类型的子类对象 
+
+        3:如果方法的返回值类型是 接口 类型  那么 return的是该接口具体的实现类对象
+	
+	  public USB getUSB(){
+	     
+	     return new Mouse();
+
+	     return new Keyboard();
+
+	     return new upan();
+	  }

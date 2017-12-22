@@ -1,0 +1,126 @@
+
+
+兄弟我看你骨骼惊奇，相貌出众，才华横溢，必是练武奇才，我这有一本破天宝典交给你，一定要好好学习。终有一日你会进化成攻城狮，
+
+自定义数据类型的使用
+类作为方法参数时，说明要向方法中传入该类的对象
+类作为方法返回值时，说明该方法要返回一个该类的对象。
+抽象类作为方法参数时，说明要传入一个实现抽象类所有抽象方法的子类对象。
+抽象类作为方法返回值时，说明需要返回一个实现抽象类所有抽象方法的子类对象。
+接口作为方法参数时，说明该方法要传入一个接口实现类对象。
+接口作为方法返回值时，说明该方法需要返回一个接口实现类对象。
+
+1：static : 关键字， 静态的意思
+		可以用来修饰类中的成员(成员变量，成员方法)
+		注意： 也可以用来修饰成员内部类
+       特点：
+			被静态所修饰的成员，会被所有的对象所共享
+			被静态所修饰的成员，可以通过类名直接调用，方便
+				Person.country = "中国";
+				Person.method();
+		        静态的成员，随着类的加载而加载，优先于对象存在
+        注意事项：
+			
+			在静态方法中，没有this关键字
+			静态方法中，只能调用静态的成员(静态成员变量，静态成员方法
+
+:2：final：关键字，最终的意思
+		final修饰的类：最终的类，不能被继承 
+		final修饰的变量： 相当于是一个常量, 在编译生产.class文件后，该变量变为常量值
+		final修饰的方法： 最终的方法，子类不能重写，可以继承过来使用
+
+3：常用来修饰类、方法、变量的修饰符如下：
+
+	权限修饰符
+	public 权限修饰符，公共访问
+	protected 权限修饰符，受保护访问
+	默认什么也不写 也是一种权限修饰符，默认访问
+	private 权限修饰符，私有访问
+	状态修饰符
+	static 静态修饰符
+	final 最终修饰符
+	abstract 抽象修饰符
+
+  我们编写程序时，权限修饰符一般放于所有修饰符之前，不同的权限修饰符不能同时使用；
+	同时，abstract与private不能同时使用；
+	同时，abstract与static不能同时使用；
+	同时，abstract与final不能同时使用。
+
+
+
+	修饰类能够使用的修饰符：
+	  修饰类只能使用public、默认的、
+			final、abstract关键字
+			使用最多的是 public关键字
+	   public class Demo {} //最常用的方式
+	   class Demo2{}
+	   public final class Demo3{}
+	   public abstract class Demo4{}
+
+	修饰成员变量能够使用的修饰符：
+			public : 公共的
+			protected : 受保护的
+				: 默认的
+			private ：私有的
+			final : 最终的
+			static : 静态的
+			使用最多的是 private
+		public int count = 100;
+		protected int count2 = 100;
+		int count3 = 100;
+		private int count4 = 100; //最常用的方式
+		public final int count5 = 100;
+		public static int count6 = 100;
+
+
+	修饰构造方法能够使用的修饰符：
+			public : 公共的
+			protected : 受保护的
+				: 默认的
+			private ：私有的
+			使用最多的是 public
+		public Demo(){} //最常用的方式
+		protected Demo(){}
+		Demo(){}
+		private Demo(){}
+
+	修饰成员方法能够使用的修饰符：
+			public : 公共的
+			protected : 受保护的
+				: 默认的
+			private ：私有的
+			final : 最终的
+			static : 静态的
+			abstract : 抽象的
+			使用最多的是 public
+		public void method1(){}   
+		protected void method2(){}
+		void method3(){}
+		private void method4(){}
+		public final void method5(){}
+		public static void method6(){}
+		public abstract void method7();
+
+
+
+
+
+
+
+
+
+内部类：在一个类中，定义了一个新类，这个新的类就是内部类	
+		class A {//外部类
+			class B{// 内部类
+			}
+		}
+特点： 
+			内部类可以直接访问外部类的成员，包含私有的成员
+
+包的声明与访问
+类中包的声明格式： 
+package 包名.包名.包名…;
+带有包的类，创建对象格式：包名.类名 变量名 = new包名.类名();
+cn.itcast.Demo d = new cn.itcast.Demo();
+导包的格式：
+import 包名.类名;

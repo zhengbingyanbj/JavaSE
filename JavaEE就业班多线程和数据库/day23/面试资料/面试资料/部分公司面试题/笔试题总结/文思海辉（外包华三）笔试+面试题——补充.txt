@@ -1,0 +1,87 @@
+最后技术经理面试问题
+1.如何保证代码的可扩展、可维护？代码执行效率高
+接口、分层思想经典mvc，设计模式，灵活的配置文件去配置，而不是写死
+使用数据库抽象来处理数据库服务器交互；
+如何构建灵活的系统？
+白箱式可扩展性
+含义：原始源代码可以查看和修改
+手段：直接修改代码
+
+通过配置向导
+对象动态装配，使用java反射技术，在运行期装载类
+基于模块得运行时动态扩展
+基于平台，让开发人员自行扩展，平台和框架通常定义了一些Hotspot热点，在这些点上，可以进行扩展，它们大多数都是通过中间语言进行扩展，具体的技术细节还不太清楚。
+2.数据结构的算法
+3.java基础的内容，高级编程，如分文件上传，文件流，非管道等，多线程处理。
+4.根据项目具体难度去分配
+5.数据库使用jdbc直接操作。
+6.使用泛型的好处
+7.提高性能，程序的执行效率 
+笔试
+选择题和填空题
+1、IPV6的长度
+2、FTP、telnet、smtp分别用的协议是什么，使用的传输层协议是什么，tcp、udp
+ftp(tcp),tftp(udp),smtp(tcp)telnet(tcp)dns(udp)
+3、在OSI参考模型中，将网络结构分为几层 7
+4、如何保证数据库表中数据的一致性
+5、UNIX查看单个进程的命令，杀死进程的命令
+6、sessionBean、entitybeans、hibernate、servlet、jsp。。。。哪些是用来做业务处理的，哪些用来页面处理、哪些用来数据库处理。。。。
+7、下面可以正确取奇数的方法，定义的int i；
+A i%2==1  B i%2！=0  C 1&i==0
+8、awt的填空题，忘了问的啥了，使用的布局方式有哪几种，如何设置。
+9、不需要导入的jar包 java.lang包
+10、下面代码的输出结果是什么   hello，gbc
+public class xx(){
+	string a="hello";
+	char[] b={'a','b','c'};
+	public staic void main(string[] args){
+		var x=new xx;
+		x.change(a,b);
+		system.out.println(a+"and");
+		system.out.println(b);
+	}
+	public void change(string a,char[] b)
+	{
+		a="xxx";
+		b[0]='x';	
+	}
+}
+简答题：
+1、写一段异常代码
+2、public、private、protected、什么都没有，这些修饰符的范围
+3、set、list、map的特点
+4、string、stringBuffer的区别
+5、什么事务死锁，及事务死锁的解决办法
+6、final、finally、finalized的区别
+7、hibernate中session的load(),get(),find()有什么区别
+四个表让写三个SQL语句，回忆不起来了。。。。
+四个表通过中间两个表关联
+客户表a	client_id address   name 
+客户下订单b 	client_id,order_id
+订单表c 	order_id,book_id,count
+订购的书本d	book_id,book_name,price
+第一题是写四个表的关联查询，查询address,book_name
+第二题是sum统计	统计每个客户的消费金额
+第三题是说如果一个订单对应多本书，这样的表设计有什么缺点，怎么设计索引效率高
+编程题
+1、输出101-200的素数及个数
+2、写方法实现：输入长度，随机生成该长度大小的密码，密码的包括大写字母，小写字母和数字
+3、验证ip值得正确性
+
+面试题
+1、数据库事务怎么控制
+2、多线程怎么写
+3、怎么写一个servlet
+4、webservice用的什么框架，内部机制是什么
+5、spring声明事务管理，怎么控制事务
+6、hibernate缓存
+7、异常
+8、单例、装饰
+9、IO流
+10、多态
+11、数据库事务的级别
+12、自己做的项目中如何做数据库优化
+13、mysql、sqlserver分页
+14、hibernate的事务和缓存
+15、session.get session.load session.find有什么区别
+

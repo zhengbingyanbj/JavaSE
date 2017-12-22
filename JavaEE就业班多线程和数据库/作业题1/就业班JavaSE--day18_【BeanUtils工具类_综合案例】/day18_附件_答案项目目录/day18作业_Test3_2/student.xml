@@ -1,0 +1,31 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<students>
+	<course name = "平面设计">
+		<student id = "it001">
+			<name>章子怡</name>
+			<age>20</age>
+			<sex>女</sex>
+			<score>99</score>
+		</student>
+		<student id = "it002">
+			<name>杨颖</name>
+			<age>21</age>
+			<sex>女</sex>
+			<score>100</score>
+		</student>
+	</course>
+	<course name = "JavaEE">
+		<student id = "it003">
+			<name>汪峰</name>
+			<age>22</age>
+			<sex>男</sex>
+			<score>89</score>
+		</student>
+		<student id = "it004">
+			<name>撒贝宁</name>
+			<age>23</age>
+			<sex>男</sex>
+			<score>90</score>
+		</student>
+	</course>
+</students>

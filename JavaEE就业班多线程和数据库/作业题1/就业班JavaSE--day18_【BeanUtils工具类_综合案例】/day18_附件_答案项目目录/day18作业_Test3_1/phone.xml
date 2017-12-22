@@ -1,0 +1,17 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<phones>
+	<product>
+		<name>荣耀37</name>
+		<brand>华为</brand>
+		<size>15.5</size>
+		<price>4388</price>
+		<color>白色</color>
+	</product>
+	<product>
+		<name>IPhone7Plus</name>
+		<brand>苹果</brand>
+		<size>14</size>
+		<price>7200</price>
+		<color>黑色</color>
+	</product>
+</phones>

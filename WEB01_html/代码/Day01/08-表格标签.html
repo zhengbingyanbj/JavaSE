@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			table属性
+				border
+				width
+				height
+				align:表格整体居中
+				cellspacing：单元格的间隙
+				bgcolor
+				background
+				
+			tr的属性
+				align：当前行内部所有单元格内部的内容位置
+				
+			td的属性：
+				align：当前单元格内部的内容位置
+				colspan：列合并
+				rowspan：行合并
+				
+			th是表头标签 与td一样 内置样式 加粗与居中
+			caption是标题
+			
+			table作用：
+				1、单纯的作为一个表格使用
+				2、页面布局  不使用table进行大面积的布局 性能低  后期div+css进行布局
+			
+		-->
+		<table border="1" width="500px" height="300px" 
+				align="center" cellspacing="0" bgcolor="yellow" background="img/2.jpg">
+			<caption>308期的人名单</caption>
+			<tr>
+				<th>heima</th>
+				<th>heima</th>
+				<th>heima</th>
+				<th>heima</th>
+			</tr>
+			<tr align="center">
+				<td colspan="2">heima</td>
+				<td>heima</td>
+				<td>heima</td>
+			</tr>
+			<tr>
+				<td>heima</td>
+				<td align="center">heima</td>
+				<td rowspan="2">heima</td>
+				<td>heima</td>
+			</tr>
+			<tr>
+				<td>heima</td>
+				<td>heima</td>
+				<td>heima</td>
+			</tr>
+		</table>
+		
+	</body>
+</html>

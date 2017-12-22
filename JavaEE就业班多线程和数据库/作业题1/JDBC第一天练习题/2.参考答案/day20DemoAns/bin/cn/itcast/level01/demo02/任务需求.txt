@@ -1,0 +1,14 @@
+1.请写出数据库的三种访问方式
+	1）控制台  命令访问
+	2）图形化界面
+	3）程序访问数据库(java,php...)
+2.请写出数据库注册驱动的三种方式
+	1）DriverManager.registerDriver(new Driver());
+	2）new Driver();
+	3）使用反射解耦具体的某个驱动耦合
+		Class.forName("com.mysql.jdbc.Driver");
+3.请写出分别JDBC中获取连接、执行对象、结果集对象对应的类名
+	Connection、Statement、ResultSet
+4.请写出PreparedStatement的好处
+	1、防止拼接sql方式的sql注入
+	2、一次编译 多次执行

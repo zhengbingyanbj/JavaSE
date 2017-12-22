@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+	<product id = "p001">
+		<name>华为X80</name>
+		<color>白</color>
+		<price>2800</price>
+	</product>
+	<product id = "p002">
+		<name>华为X88</name>
+		<color>黑</color>
+		<price>2900</price>
+	</product>
+</products>

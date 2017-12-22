@@ -1,0 +1,27 @@
+create database day20_2;
+use day20_2;
+#创建分类表：
+CREATE TABLE category(
+	cid varchar(32) PRIMARY KEY,#主键ID
+	cname VARCHAR(20)#分类名称
+);
+INSERT INTO category VALUES('c001','电脑办公');
+INSERT INTO category VALUES('c002','服装');
+#创建商品表：
+CREATE TABLE product(
+	pid INT PRIMARY KEY,#主键ID
+	pname VARCHAR(20),#商品名称
+	price DOUBLE,#商品价格
+	category_cid VARCHAR(32)#外键
+);
+
+#导入数据
+INSERT INTO product(pid,pname,price,category_cid) VALUES(1,'联想电脑',5000,'c001');
+INSERT INTO product(pid,pname,price,category_cid) VALUES(2,'海尔电脑',3000,'c001');
+INSERT INTO product(pid,pname,price,category_cid) VALUES(3,'雷神电脑',5000,'c001');
+
+INSERT INTO product(pid,pname,price,category_cid) VALUES(4,'JACK JONES',800,'c002');
+INSERT INTO product(pid,pname,price,category_cid) VALUES(5,'真维斯',200,'c002');
+INSERT INTO product(pid,pname,price,category_cid) VALUES(6,'花花公子',440,'c002');
+INSERT INTO product(pid,pname,price,category_cid) VALUES(7,'劲霸',2000,'c002');
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	以文本的方式显示下列内容
+	<person name="liuyan" age='38'>
+		
+	</person>
+	
+	<![CDATA[
+	
+		写任意内容 所有内容都以文本形式呈现
+	
+	]]>
+
+ -->
+ <bean>
+ 
+ 	&lt; person name=&quot;liuyan&quot; age=&apos;38&apos;&gt;
+	&lt;/person&gt;
+	
+	<![CDATA[
+		<person name="liuyan" age='38'>
+		
+		</person>
+	
+	
+	]]>
+ 
+ </bean>

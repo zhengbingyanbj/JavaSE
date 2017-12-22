@@ -1,0 +1,27 @@
+create database day20_1;
+use day20_1;
+#创建商品表：
+CREATE TABLE product(
+	pid INT PRIMARY KEY,#主键ID
+	pname VARCHAR(20),#商品名称
+	price DOUBLE,#商品价格
+	category_name VARCHAR(32)#商品分类名称
+);
+#导入数据
+INSERT INTO product(pid,pname,price,category_name) VALUES(1,'联想电脑',5000,'电脑办公');
+INSERT INTO product(pid,pname,price,category_name) VALUES(2,'海尔电脑',3000,'电脑办公');
+INSERT INTO product(pid,pname,price,category_name) VALUES(3,'雷神电脑',5000,'电脑办公');
+
+INSERT INTO product(pid,pname,price,category_name) VALUES(4,'JACK JONES',800,'服装');
+INSERT INTO product(pid,pname,price,category_name) VALUES(5,'真维斯',200,'服装');
+INSERT INTO product(pid,pname,price,category_name) VALUES(6,'花花公子',440,'服装');
+INSERT INTO product(pid,pname,price,category_name) VALUES(7,'劲霸',2000,'服装');
+
+INSERT INTO product(pid,pname,price,category_name) VALUES(8,'香奈儿',800,'女士用品');
+INSERT INTO product(pid,pname,price,category_name) VALUES(9,'相宜本草',200,'女士用品');
+INSERT INTO product(pid,pname,price,category_name) VALUES(10,'面霸',5,'女士用品');
+
+INSERT INTO product(pid,pname,price,category_name) VALUES(11,'雪碧',56,'饮料饮品');
+INSERT INTO product(pid,pname,price,category_name) VALUES(12,'香飘飘奶茶',1,'饮料饮品');
+
+INSERT INTO product(pid,pname,price,category_name) VALUES(13,'iPhone9',8000,NULL);

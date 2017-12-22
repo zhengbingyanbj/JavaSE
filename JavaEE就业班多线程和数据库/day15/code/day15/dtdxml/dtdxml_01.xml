@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	1.引入dtd约束  复制 粘贴
+	2.beans 要求xml文档写的根元素
+	3."bean.dtd" dtd文件所在的位置
+
+ -->
+ <!DOCTYPE beans SYSTEM "bean.dtd">
+ <beans>
+ 
+	<bean className="" id="p001">
+		<property value = "" name="">aaaaaa</property>
+	
+	</bean>
+ 	<bean className="" id="p002"></bean>
+ 	<bean className="" id="p003"></bean>
+	
+ 	<import resource="">你好</import> 
+	<import resource="">我好</import> 
+ 	
+	
+	<import resource=""></import> 
+	<import resource=""></import> 
+ 
+ </beans>

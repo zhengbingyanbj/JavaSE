@@ -1,0 +1,295 @@
+ 
+
+  安装 配置  
+
+  JDK  JRE  JVM  
+
+  JDK负责软件开发，交给JRE运行，JVM保证了语言的跨平台
+
+  java之父 詹姆斯高斯林 
+       95   
+         爪哇岛 JAVA 
+	 JAVASE
+	 
+	 JAVAME 
+	 JAVAEE
+
+   安装   安装目录不要有中文或者特殊符号 
+       (Tomcat时候 )
+
+   脚本语言 
+
+   java 高级语言 
+          编译阶段   javac命令 
+                  将源文件中  类  生成为 字节码文件
+
+		  作用： 编译检查语法错误 
+          运行阶段  java命令
+	          执行运行 
+
+		  Exception  异常
+		  Error   错误  
+
+		  第五天的时候 主要将
+
+		  我们前几个月 处理异常的时候  throws（声明抛出） 
+                  
+                   
+
+    HelloWorld.java
+        public class HelloWorld{
+	      
+	      public static void main(String[] args){
+	          
+		  System.out.println("这是一个java程序");
+	      }
+
+	}
+   
+
+   基础语法  
+
+     关键字  被java赋予特殊含义的单词
+     
+     标识符  起名字的一种规则
+             
+
+     常量  在程序执行过程中，其值不会改变的量。  也就是说 该值只能赋值一次，不能再变
+           
+
+     变量  在程序执行过程中，其值可以发生改变， 也就是说可以赋值多次，注意 赋值之后以前值不存在
+
+           在使用的时候 必须赋值才能使用
+
+	   数据类型 变量名 = 该类型的值；
+
+	   类名(数据类型)  对象名(变量名) = new 类名();空间地址值
+
+	   变量就是在内存中申请的一小块区域
+
+          数据类型
+	    基本数据类型
+               四类八种  
+                      大的类型  可以直接 接收 小的类型   隐式转换 
+		      小的类型  不能直接 接收 大的类型  
+		          这个时候使用强制转换 
+
+			  String s = "123";
+
+			  int a = (int)s;  错误  
+
+
+	    引用数据类型
+	          类  接口  数组 
+
+
+    
+      运算符 
+         电子元件   开 关 
+
+	       使用01来表示 
+	 bit 位 
+
+	 1 Byte = 8 bit
+
+
+	 位运算 
+
+
+	 算数运算符 
+	    %  取余  
+	      任意数 对5取余 有几种情况  0 1 2 3 4
+	      任意数 对3取余 有几种情况  0 1 2 
+	      。。。
+
+	      （集合 斗地主案例 ）
+         
+	 赋值运算符 
+	    把右边的结果 赋值左边
+
+	 关系运算符 
+	    == 
+          
+         逻辑运算 
+
+	   &  && 短路与 有false则false   
+
+	   |  ||         有true则true
+
+	   ！ 非  相反的
+
+	   ^   相同为false 不同为true 磁铁  
+
+         三元运算符  
+	    if的第二种结构 
+
+
+	 流程控制语句
+	    
+	    顺序结构  由上至下 依次执行
+
+	    选择结构  switch  if 三种结构
+
+	    循环结构  for while  
+	             知道次数用for 
+		     不知道次数用while
+
+
+		     do...while(){}
+
+            跳转语句 
+	        continue  跳过本次循环 
+		break     结束当前语句
+		return    结束方法 
+
+
+         数组 
+	   String[] arr = new String[3];
+	   Student[] arr = new Student[2];
+
+	   String[] arr = new String[]{"a","b"};
+
+
+	   String[] arr = {"a","b"};简化格式
+
+	 二维数组  
+	    web的时候  二级级联  存数据的时候 用二维数组 
+
+	    {{“海淀区”，“昌平区”}，{“沙坪坝”，“观音桥”，“解放碑”}}
+
+
+	 方法  
+	    学会调用 （结合 面向对象）
+	    设计方法  
+	      两个明确  明确参数列表 明确返回值类型
+
+	  
+          String 类  
+	     使用最多的一个类  没有之一
+             
+             String 类代表字符串（文本类型）。
+	     
+	     Java 程序中的所有字符串字面值（如 "abc" ）都作为此类的实例实现。
+	     "hello" 这个就是 字符串对象
+
+
+              字符串是常量；它们的值在创建之后不能更改。
+	      String s = "hello";
+
+	      s = "world";
+	      
+	      
+	      字符串缓冲区支持可变的字符串。
+	       StringBuffer StringBuilder
+
+	      因为 String 对象是不可变的，所以可以共享
+                String s = "haha";
+
+		String n = "haha";
+
+          集合 容器
+	     集合只能存储引用数据类型
+	     使用规则 
+	       1：创建集合对象
+	       2：将元素添加到集合中
+	       3：遍历 
+                \JDK  向下兼容 
+
+	       ArrayList<String> list = new ArrayList<String>();
+
+               开发原则 
+	         开发版本 小于等于 运行版本
+
+               ArrayList<Integer> list = new ArrayList<Integer>();
+
+	       list.add(1);
+
+
+                
+	       ArrayList<Student> list = new ArrayList<Student>();
+
+               ArrayList<ArrayList<String>> list = new ArrayList<ArrayList<String>>(); 集合嵌套 
+
+	  IO流  
+	     字符流 
+	     字符缓冲流 
+
+	     流的操作规律
+	       1：创建对应的流对象 
+	       2：执行对应操作（读  写）
+	       3：释放资源
+
+	  面向对象
+	       
+                 与面向过程而言 好处 
+
+		   1：从执行者变成了指挥者
+		   2：更符合人们思考方式
+		   3：复杂的事情 简单化
+
+	    三大特征 
+	       封装   
+	         方法 就是封装
+
+		 对类的封装 
+		   构造方法
+		   成员变量  （private ）
+		   成员方法
+                   
+
+		   通过类创建对象   
+
+		   Student  stu = new Student("张三",18);
+
+		   过程： 
+		      new  就创建对象的开始 
+
+		      构造方法的执行完毕 代表了 创建对象的完毕
+	       继承 
+                    类与类之间关系 
+		    
+		    类与接口之间关系 
+	       多态
+	            H20
+
+		    对象的多态  
+
+		    向上转型  向下转型
+
+
+		七七八八的  一些知识点 
+
+
+
+		如果 方法的参数 是 类类型    调用 方法 传递的是 该类型对象
+
+		如果 方法的返回值类型 是类类型  方法返回的是 该类型的对象
+
+
+		抽象类  接口
+
+
+		BufferedReader  br = new BufferedReader(new FileReader("a.txt"));
+
+
+
+	       
+
+
+	      
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+    

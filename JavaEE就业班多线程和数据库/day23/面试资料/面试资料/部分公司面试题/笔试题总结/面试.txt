@@ -1,0 +1,55 @@
+笔试题
+1、不用排序算法给数组排序？
+
+2、生成一个由字符或数字组成的长度为六的字符串？（可以用java.lang.Math中的方法）
+
+3、模拟实现两个大于1000位的数据相加？
+
+4、try{
+	。。。xxx；
+	return mm;
+   }..finally{
+	。。。fsdf;
+	return ss; 
+   }
+说明一下在try和finally中return作用的作用机制
+
+6、coustomer 和 order 在inverse 和 cascade 联合作用下的结果
+ inverse   cascade
+ true         all
+ true         save-update
+ true	     all-delete-orphan
+ true            delete
+ false       all
+ false       save-update
+ false        all-delete-orphan
+ false         delete
+ 
+ 7、写出冒泡排序、快速排序、直接选择排序、直接插入排序中的两个排序算法。
+
+ 8、用js完成当前日期的格式化为（1990-12-22）形式。
+
+ 9、打印菱形
+    *
+   ***
+  *****
+   ***
+    *
+10、在student(user_id,username,name),
+course(course_id,coursename),
+stu_course(user_id,course_id),
+exam(exam_id,examname),
+  mark(user_id,course_id,exam_id,mark)表中
+  
+  1、选出学生的用户名和姓名，如果参加了考试则还要输出参加考试的课程的名称，考试的名称，成绩。
+  不允许有重复值和多余属性。其中的mark为成绩表。
+
+11、servlet,filter,listener 的执行顺序是什么，能否改变？
+
+12、在Linux下查看mysql,tomcat是否在运行？
+
+13、js下完成把后台返回的字符串转换为json对象，自己写出一个json格式的字符串（其中要包含数组）进行转换。
+
+14、ajax引擎的工作原理。
+
+15、写出3种在js下重定向的方法。

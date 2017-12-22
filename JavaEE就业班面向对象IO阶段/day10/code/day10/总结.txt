@@ -1,0 +1,39 @@
+File 
+   构造
+    File(String pathName)
+    File(String parent,String child)
+    File(File parent,String child)
+  获取功能 
+    String getName()
+    String getAbsolutePath()  
+    long length()
+    long lashModified()
+    String getPath()
+ 判断
+    boolean exists()
+    boolean isFile()
+    boolean isDirectory()
+    
+ 创建功能
+    boolean createNewFile()
+    boolean mkdir()    
+    boolean mkdirs() 
+ 删除功能
+    boolean delete()
+    
+ 高级获取功能
+    String[] list()
+    File[] listFiles()
+    
+  递归 
+     方法中自己调用了自己 
+     
+      单级目录下 .java文件
+      多级目录下.java文件
+      
+   递归注意
+     1： 不宜过深
+     2： 要有出口         
+
+  
+   

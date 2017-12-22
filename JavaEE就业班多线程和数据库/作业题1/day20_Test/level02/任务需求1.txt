@@ -1,0 +1,65 @@
+需求1：创建管家婆数据库  数据库名字  gjp
+
+需求2：在数据库中创建两张表
+	表1：分类数据表，表名 gjp_sort。
+	字段包含：
+		 sid INT PRIMARY KEY AUTO_INCREMENT, -- id列，主键约束(数据唯一性) 自动增长
+  		 sname VARCHAR(100) , -- 分类名称
+   		 parent VARCHAR(100), -- 父分类，支出，收入
+         sdesc VARCHAR(10000) -- 分类描述
+	
+	表2：创建账务的数据表,表名：gjp_ledger
+	字段包含：
+		  lid INT PRIMARY KEY AUTO_INCREMENT , -- 主键，自动增长
+		  parent VARCHAR(100), -- 所属的大分类
+		  money DOUBLE , -- 金额
+		  sid INT , -- 分类ID
+		  account VARCHAR(100), -- 账户
+		  createtime DATE , -- 创建日期和时间
+		  ldesc VARCHAR(1000) -- 描述
+	   
+需求3：向两张表中添加数据（注意 ：账务表的外键ID（从表），对应了分类表的主键ID（主表）） 
+	   写入数据的方式，推荐使用：
+	  向gjp_sort表插入数据（根据示例插入10条数据）： 
+	  示例：INSERT INTO gjp_sort (sname,parent,sdesc) VALUES ('基金收入','收入','我买了点基金')
+	  
+	   向gjp_ledger表插入数据（根据示例插入20条数据）： 
+	   示例：INSERT INTO gjp_ledger(lid,parent,money,sid,account,createtime,ldesc) 
+	 VALUES (1,'支出',247,2,'交通银行','2015-03-02','家庭聚餐');
+	 
+需求4：聚合函数的使用：
+         聚合函数 count() 的使用  
+		4.1:统计 gjp_ledger表中共有多少条数据。
+			提示：使用count(*)
+		4.2：count 统计所有工商银行的内容，共有多少条
+			提示：使用 LIKE + '%内容%'
+			
+		4.3：统计账务表中金额大于3000的有多少条记录
+			提示：使用比较运算符 >
+		
+	聚合函数 sum() 的使用  
+		4.4: 查询账务表，求出money字段的和
+			提示：使用sum(字段名)
+		4.5：查询账务表，统计所有支出的金额总和
+			提示：查询条件为 '支出'
+	聚合函数：max,min 求出最大和最小值
+		4.6：查询账务表，统计出 支出中的最大值 和 收入中的最小值
+		
+	聚合函数：avg():
+		4.7:查询账务表，计算出，所有支出的平均数
+			提示：avg(字段) 计算这个字段的平均数
+	排序order by:
+		4.8 :查询账务表，使用money字段，进行升序排序 
+		4.9 ：查询账务表，使用createtime字段，进行降序排序 
+
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   

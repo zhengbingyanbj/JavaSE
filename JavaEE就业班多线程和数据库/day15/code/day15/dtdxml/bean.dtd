@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	传智播客DTD教学实例文档。
+	模拟spring规范，如果开发人员需要在xml使用当前DTD约束，必须包括DOCTYPE。
+	格式如下：
+	<!DOCTYPE beans SYSTEM "bean.dtd">
+-->
+<!--
+	定义元素语法：<!ELEMENT 元素名  元素描述>
+	元素名：自定义
+	元素描述包括：符号和数据类型
+		常见符号：? * + () | ,
+		常见类型：#PCDATA 表示内容是文本，不能是子标签
+-->
+
+
+<!ELEMENT beans (bean*,import*) >
+<!ELEMENT bean (property*)>
+<!ELEMENT property (#PCDATA)>
+
+<!ELEMENT import (#PCDATA)>
+
+<!--
+属性的语法：（attribute）
+	<!ATTLIST 元素名
+					属性名   属性类型   约束
+					属性名   属性类型   约束
+					...
+	>
+	元素名：属性必须是给元素添加，所有必须先确定元素名
+	属性名：自定义
+	属性类型：ID、CDATA
+		ID : ID类型的属性用来标识元素的唯一性
+		CDATA：文本类型
+		
+	约束：
+		#REQUIRED：说明属性是必须的；required
+		#IMPLIED：说明属性是可选的；implied
+
+-->
+
+
+
+<!ATTLIST bean id CDATA #REQUIRED
+			   className CDATA #REQUIRED
+			   
+>
+
+<!ATTLIST property name CDATA #REQUIRED
+				   value CDATA #REQUIRED
+>
+
+<!ATTLIST import resource CDATA #REQUIRED>

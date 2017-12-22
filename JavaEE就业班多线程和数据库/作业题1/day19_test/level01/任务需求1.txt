@@ -1,0 +1,34 @@
+需求1：多表练习
+	1.1：创建角色表（role）：
+		  包含字段：
+		    id int primary key auto_increment (主键自动增长)
+		    name varchar(10)	(角色名称)
+		  
+		添加三种角色
+  			insert into role(name) values('总经理'),('经理'),('员工');
+		
+	1.2：创建权限表（privilege）：
+		    包含字段：
+		    	id int primary key auto_increment,(主键自动增长)
+		        name varchar(10)	(权限名称)
+		  
+		添加三种权限
+		    insert into Privilege (name) values ('请假'),('审批请假'),('辞退员工');
+		    
+	1.3：创建中间表（role_privilege）：
+			包含字段：
+		    	 role_id int ,		(role_id 指向角色表 主键 id)
+		    	 Privilege_id int	(Privilege_id 指向权限表 id)
+		
+	1.4：将角色表与权限表进行关联，创建外键约束
+		提示：alter table 从表 add [constraint] [外键名称] foreign key (从表外键字段名) references 主表 (主表的主键);		
+			1）为中间表的字段  role_id 添加外键约束
+			2）为中间表的字段  Privilege_id 添加外键约束
+		
+	
+		
+		
+		
+		
+		
+		

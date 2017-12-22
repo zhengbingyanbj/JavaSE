@@ -1,0 +1,27 @@
+﻿1.请描述对JDBC的理解
+# JDBC  是一种用于执行SQL 语句的java API , JDBC 是java访问数据库的标准规范， 可以为不同关系型数据库提供统一访问
+他由一组用java语言编写的接口和类组成。
+
+
+2.请写出JDBC连接数据库的详细步骤
+
+1注册驱动
+	Class.forName("com.mysql.jdbc.Driver");
+2.获得连接.
+	String url = "jdbc:mysql://localhost:3306/mydb";
+3.获得执行sql语句的对象
+	Statement stmt = conn.createStatement();
+		Connection conn = DriverManager.getConnection(url, "root", "root");
+4.执行sql语句，并返回结果
+	ResultSet rs = stmt.executeQuery("select * from category");
+5处理结果集
+	文档内处理结果的代码 使用while 循环来做
+6 释放资源
+	关键字close
+
+
+3.请使用代码编写一个简单的连接数据库的案例，只需要将student中数据查询出来，打印在控制台上即可
+
+
+4.请描述SQL注入问题以及解决方式
+

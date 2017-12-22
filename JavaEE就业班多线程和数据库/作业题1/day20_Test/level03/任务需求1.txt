@@ -1,0 +1,54 @@
+需求1：创建管家婆数据库  数据库名字  gjp
+	创建语句：CREATE DATABASE gjp 
+	
+需求2：在gjp 数据库中创建两张表
+	在数据库图形工具中,运行gjp.sql进行创建即可。   
+	gjp.sql。在项目根路径下。
+	   
+需求3：向两张表中添加数据（注意 ：账务表的外键ID（从表），对应了分类表的主键ID（主表）） 
+	在数据库图形工具中,运行gjp.sql进行创建即可。   
+	gjp.sql。在项目根路径下。
+	 
+需求4：聚合函数的使用：
+         聚合函数 count() 的使用  
+		4.1:统计 gjp_ledger表中共有多少条数据。	
+			提示：SELECT COUNT(*) AS '别名' FROM 表名;
+			
+		4.2：count 统计所有工商银行的内容，共有多少条
+			提示：SELECT COUNT(*) FROM 表名  WHERE 字段名  LIKE '%工商银行%'
+			
+		4.3：统计账务表中金额大于3000的有多少条记录
+			提示：SELECT COUNT(*) FROM 表名 WHERE 字段名 > 3000
+			
+	聚合函数 sum() 的使用  
+		4.4: 查询账务表，求出money字段的和
+			提示：SELECT SUM(字段) FROM 表名
+			
+		4.5：查询账务表，统计所有支出的金额总和
+			提示：SELECT SUM(字段) FROM 表名 WHERE '字段' = '支出'
+			
+	聚合函数：max,min 求出最大和最小值
+		4.6：查询账务表，统计出 支出中的最大值 和 收入中的最小值
+			提示：SELECT MAX(字段) FROM 表名 WHERE '字段' = '支出'
+			提示：SELECT MIN(字段) FROM 表名 WHERE '字段' = '收入'	
+			
+	聚合函数：avg():
+		4.7:查询账务表，计算出，所有支出的平均数
+			提示：SELECT AVG(字段) FROM 表名 WHERE '字段' = '支出'
+			
+	排序order by:
+		4.8 :查询账务表，使用money字段，进行升序排序 
+			提示：SELECT * FROM 表名 ORDER BY '字段' asc
+		4.9 ：查询账务表，使用createtime字段，进行降序排序 
+			提示：SELECT * FROM 表名 ORDER BY '字段' desc
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   

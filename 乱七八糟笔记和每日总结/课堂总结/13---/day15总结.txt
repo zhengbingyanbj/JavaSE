@@ -1,0 +1,73 @@
+	背单词 不要求会拼写 要求能看懂什么意思
+	    element 元素
+	    attribute 属性
+	    document 文档
+	    required 必须的
+	    implied 可选的
+	    content 内容
+	    model 模版
+	    namespace命名空间
+
+
+反射
+	通过反射可以获取到一个类的构造方法，成员方法成员变量 并运行
+	反射将一个类的各个部分映射成相应的类
+
+	反射获取构造方法
+		 Class类中方法
+ 			Constructor<?>[] getConstructors()  返回当前字节码文件对象的所有public修饰的构造方法
+ 			Constructor<T> getConstructor(Class<?>... parameterTypes) 返回指定了参数的构造方法 
+			参数
+				Constructor 用来描述构造方法的类  返回回来的就是Constructor的对象
+ * 				Class<?>... parameterTypes 可变参数  是构造方法参数类型 如果参数不写 则返回空参构造方法
+		Constructor
+			 T newInstance(Object... initargs)  运行构造方法创建对象 
+							    返回值T 是泛型 没有泛型就是Object类型
+							    参数 为构造方法要使用的实际参数  参数不写则运行的是空参构造方法
+		
+		1.获取字节码文件对象
+		2.通过字节码文件对象获取构造方法对象
+		3.通过构造方法对象调用方法运行构造方法
+
+	反射获取对象的快捷方式
+		Class类的方法
+			 T newInstance()  创建此 Class 对象所表示的类的一个新实例。
+			 前提 必须有空参构造  空参构造必须public修饰
+		1.获取字节码文件对象
+		2.通过字节码文件直接调用newInstance创建对象
+
+	反射获取成员变量(因为成员变量都是私有的，所以用的很少)(了解)
+		Class类中方法
+			 Field getField(String name)   返回指定变量名的成员变量
+			 Field[] getFields()  返回所有public修饰的成员变量
+		Field类中的方法
+			 void set(Object obj, Object value) 为指定对象的成员变量赋值  obj为要赋值的对象 value为要赋的值
+		1.获取字节码文件对象
+		2.通过字节码文件对象获取字段对象
+		3.调用set方法为字段赋值 注意 需要给定一个对象 可以通过快捷方式反射创建
+
+	反射获取成员方法
+		Class类中方法
+			 Method[] getMethods()  获取所有公共方法
+			 Method getMethod(String name, Class<?>... parameterTypes)  获取指定方法名的公共方法
+										    name 方法名
+										    Class<?>... parameterTypes 可变参 方法需要的参数类型 如果不写为空参方法
+		Method类中方法	
+			 Object invoke(Object obj, Object... args)   对带有指定参数的指定对象调用由此 Method 所表示的方法
+								     obj 要运行哪个对象的方法
+								     args 方法的实际参数
+		1.获取字节码文件对象
+		2.通过字节码文件对象获取方法对象
+		3.调用invoke方法运行当前方法 注意 需要给定一个对象 可以通过快捷方式反射创建
+		
+	暴力反射作为了解内容
+	加载配置文件的方式需要多做练习
+
+
+		
+				
+ 
+
+										
+										
+ 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	XML属性
+	1. 键值对方式定义属性  属性名="属性值" 属性值必须使用""或''包裹
+	2. 属性必须定义在开始标签
+	3. 一个标签可以定义n个属性  但是属性名不能重复
+	4. 属性名的命名  正常命名 
+
+ -->
+ <bean id = "">
+ 	<person id="001" name="liuyan" age='38' >
+ 		 <name>aaa</name>
+ 	
+ 	</person>
+ 	<person id="002" name="liuyan" age='38' >
+ 	
+ 	
+ 	</person>
+ 	<person id="003" name="liuyan" age='38' >
+ 	
+ 	
+ 	</person>
+ 	<person id="004" name="liuyan" age='38' >
+ 	
+ 	
+ 	</person>
+ 	<a name=""/>
+ 	
+ </bean>

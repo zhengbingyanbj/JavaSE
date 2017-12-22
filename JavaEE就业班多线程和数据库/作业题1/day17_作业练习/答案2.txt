@@ -1,0 +1,56 @@
+需求1：SQL约束
+	主键约束的概念：
+		1) SQL语法中如何表示一个字段是主键？
+			答：使用PRIMARY KEY 约束，表示主键
+			
+		2) 主键的作用是什么？
+			答：用于标识数据库表中的每条记录是唯一不重复的。
+			
+		3) 每个表可以有几个主键？
+			答：开发中，每个表有且只有一个主键
+		
+		4) 表中的主键特点是什么？
+			答： 主键必须填写，必须唯一
+	
+	如何添加主键约束(练习前两种添加方式)：
+			方式一：创建表时，在字段描述处，声明指定字段为主键
+				示例：CREATE TABLE p1(
+						id int PRIMARY KEY,
+						name varchar(200),
+						idCard varchar(50)
+					 );
+				
+			方式二：创建表时，在constraint约束区域，声明指定字段为主键
+				示例：CREATE TABLE p2	(
+						id int,
+						name varchar(200),
+						idCard varchar(50),
+						PRIMARY KEY (id,name)
+					  );
+										
+			方式三：创建表之后，通过修改表结构，声明指定字段为主键：（了解）
+	
+需求2：自动增长策略简述
+			1)、auto_increment(自动增长的列)关键字。
+			2)、自动增长类型必须是整型
+			3)、自动增长类型必须为键
+			
+	   2.1:创建一张person表,将主键ID设置为自增类型
+	 		create table person(
+	 			id primary key auto_increment,	
+	 			name varchar(20);
+	 			idCard  varchar(30);
+	 		); 
+	   2.2:向person表中添加2条数据，忽略主键（主键会自动增长）,观察主键变化;		
+			INSERT INTO person (name,idCard) VALUES ('TOM','123');
+			INSERT INTO  person VALUES (NULL,'Bill','110');
+			
+	   2.3：请说出：delete和truncate的区别
+	   		1)Delete删除表中的数据，但不重置auto-increment记录数。效率低，安全，数据可以恢复
+	   		
+			  2)Truncate删除表中的数据，auto-increment记录数将重置。
+				 Truncate其实先删除表然后再创建表。效率高，不安全，数据不可以恢复
+	   		
+	   2.4：修改主键自增的起始值：
+	   		ALTER TABLE p8 AUTO_INCREMENT=100
+		

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	引入schema约束  复制 粘贴 补结束标签
+
+ -->
+ <my:beans xmlns:my="http://www.itcast.cn/bean"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.itcast.cn/bean bean-schema.xsd">
+	   
+	   
+<!-- 	   <bean id="" className="">
+	   		<property name="" value=""></property>
+	   		<property name="" value=""></property>
+	   
+	   </bean>
+	   <bean id="" className=""></bean>
+	   <bean id="" className=""></bean>
+	   <bean id="" className=""></bean>
+	   
+	    <import resource=""  />
+	 
+	    -->
+	    <my:bean className="" id=""></my:bean>
+	    <my:import resource=""/>
+	   
+	   
+	   
+</my:beans>
+ 

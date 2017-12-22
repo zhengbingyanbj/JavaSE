@@ -1,0 +1,21 @@
+package level03_03;
+
+/*
+ * 有一堆零件数量不超过1000个,
+ * 如果4个零件一组最后剩余2个,如果7个零件一组最后剩余3个,如果9个零件一组最后剩余5个,请计算这堆零件个数有几种可能
+ */
+public class Test03 {
+	public static void main(String[] args) {
+		int count = 0;
+		
+		for (int i = 6; i < 1000; i++) {
+			if ((i % 4 == 2) && (i % 7 == 3) && (i % 9 == 5)) {
+				count++;
+				System.out.print(i + " ");
+			}
+		}
+		
+		System.out.println("共有 " + count + " 情况");
+	}
+	
+}

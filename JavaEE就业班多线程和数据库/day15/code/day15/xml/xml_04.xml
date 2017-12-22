@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	转义字符
+	
+	< 		&lt;
+	>       &gt;
+	"		&quot;
+	'		&apos;
+	&		&amp;
+	
+ -->
+ <bean>
+ 	 &lt; &gt; &quot; &quot; &apos; &apos; &amp;
+ 
+ </bean>

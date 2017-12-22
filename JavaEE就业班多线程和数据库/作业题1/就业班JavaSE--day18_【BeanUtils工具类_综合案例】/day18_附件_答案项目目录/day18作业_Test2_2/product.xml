@@ -1,0 +1,31 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<products>
+	<category name = "电视机">
+		<product id = "p001">
+			<brand>SONY</brand>
+			<type>XN65</type>
+			<price>12000</price>
+			<size>65寸</size>
+		</product>
+		<product id = "p002">
+			<brand>LG</brand>
+			<type>LY2201</type>
+			<price>4320</price>
+			<size>45寸</size>
+		</product>
+	</category>
+	<category name = "电冰箱">
+		<product id = "p003">
+			<brand>海尔</brand>
+			<type>H330</type>
+			<price>3800</price>
+			<size> 173L</size>
+		</product>
+		<product id = "p004">
+			<name>西门子</name>
+			<type>X220</type>
+			<price>4999</price>
+			<size>188L</size>
+		</product>
+	</category>
+</products>

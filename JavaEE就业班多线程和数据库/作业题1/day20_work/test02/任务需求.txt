@@ -1,0 +1,108 @@
+需求1：多表练习
+	1.1：为甚么使用多表操作（举一个实际的例子）？
+	
+	1.2：表与表之间如何产生联系？
+	
+	1.3：多表关系中是存在主表和从表的，那么什么是主表，什么是从表。
+	
+	1.4：外键的特点？
+
+	1.5：什么是外键约束？
+			问题1：从表尝试引用主表不存在的数据
+			问题2：主表尝试删除从表引用的数据
+		
+		使用外键约束解决上述问题：
+			答：强制性约束，强制保证外键数据完整。
+			
+	
+需求2：多表关系
+	2.1:一对多关系。
+			实现：分类和商品
+			#创建分类表
+			create table category(
+			  cid varchar(32) PRIMARY KEY ,
+			  cname varchar(100)		#分类名称
+			);
+			
+			# 商品表
+			CREATE TABLE `products` (
+			  `pid` varchar(32) PRIMARY KEY  ,
+			  `name` VARCHAR(40) ,
+			  `price` DOUBLE 
+			);
+			
+			#添加外键字段
+				alter table 表名 add column 字段名 varchar(32);
+			
+			#添加约束
+				constraint【constraint：约束】 ,references【references:标记】	
+				foreign key【foreign key：外键】,references【references:标记】
+
+			提示：
+			alter table 从表 add [constraint] [外键名称] foreign key (从表外键字段名) references 主表 (主表的主键);
+			
+		操作两张表（注意外键约束的作用）：
+			#1 向分类表中添加数据
+				INSERT INTO 表名 (字段1，字段2) VALUES('c001','服装');
+			
+			#2 向商品表添加普通数据,没有外键数据，默认为null
+				INSERT INTO 表名 (字段1，字段2) VALUES('p001','商品名称');
+			
+			#3 向商品表添加普通数据，含有外键信息(category表中存在这条数据)
+				INSERT INTO 表名 (字段1，字段2，字段3) VALUES('p002','商品名称2','c001');
+			
+			#4 向商品表添加普通数据，含有外键信息(category表中不存在这条数据) -- 失败,异常
+				INSERT INTO 表名 (字段1，字段2，字段3) VALUES('p003','商品名称2','c999');
+			
+			#5 删除指定分类(分类被商品使用) -- 执行异常
+				DELETE FROM 表名  WHERE cid = 'c001';
+			
+
+需求3 ：商品表和订单表是多对多关系，请尝试书写建表语句，并加入外键约束:
+		# 商品表[已存在]
+		
+		# 订单表
+			create table `orders`(
+			  `oid` varchar(32) PRIMARY KEY ,
+			  `totalprice` double 	#总计
+			);
+		
+		# 订单项表
+			create table orderitem(
+			  oid varchar(50),-- 订单id
+			  pid varchar(50)-- 商品id
+			);
+		
+		创建：订单表和订单项表的主外键关系
+			
+		
+		创建：商品表和订单项表的主外键关系
+			
+		
+		# 联合主键（可省略）
+			alter table `orderitem` add primary key (oid,pid);
+		
+		
+		4.4.3	操作
+		#1 向商品表中添加数据
+			INSERT INTO products (pid,pname) VALUES('p003','商品名称');
+		
+		#2 向订单表中添加数据
+			INSERT INTO orders (oid ,totalprice) VALUES('x001','998');
+			INSERT INTO orders (oid ,totalprice) VALUES('x002','100');
+		
+		#3向中间表添加数据(数据存在)
+			INSERT INTO orderitem(pid,oid) VALUES('p001','x001');
+			INSERT INTO orderitem(pid,oid) VALUES('p001','x002');
+			INSERT INTO orderitem(pid,oid) VALUES('p002','x002');
+			
+		#4删除中间表的数据
+			DELETE FROM orderitem WHERE pid='p002' AND oid = 'x002';
+		
+		#5向中间表添加数据(数据不存在) -- 执行异常
+			INSERT INTO orderitem(pid,oid) VALUES('p002','x003');
+		
+		#6删除商品表的数据 -- 执行异常
+			DELETE FROM products WHERE pid = 'p001';
+
+		

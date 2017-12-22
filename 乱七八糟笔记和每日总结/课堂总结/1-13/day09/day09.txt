@@ -1,0 +1,60 @@
+Map接口：双列集合 Collection：单列集合。两者没有关系。
+映射关系的键值对： Key : value  一个键只能对应一个值。键不能重复
+Map<K,V> :
+	HashMap :无序
+		put(k,v);	将键值对存储到集合集合中
+			键不为重复 返回值为空，当你存储重复键时，会返回被覆盖之前的值。
+		Map<Integer,String> map =new Map<Integer,String>();
+			Java中，键值对使用 = 等号连接；
+			当存储重复的键时，会覆盖掉之前的键。
+		get(K);	通过键拿到对应的值。
+			如果集合中没有这个键，返回null
+		remove(Key k); 通过键删除值。返回对应的value 
+		put(K,V);
+
+		KeySet();  
+			将Map集合的所有的key存储到set集合。
+			再通过get()方法，通过键获取到值。
+			Map集合不能直接遍历，需要通过SET作为第三方，来保存键值
+		entrySet();作用：获取集合中映射关系对象，存储到set
+			1、调用map集合的entrySet(),将集合中的映射关系对象，存储到set中
+			2、迭代Set集合，set集合的元素，映射关系对象
+			3、通过关系映射对象中的方法，getKey getValue 获取键值对
+		entrySet()：方法返回值
+			//外部类.内部类,
+			Set<Map.Entry<Integer ,String>> set = map.entrySet();\
+	    增强for循环不能够遍历MAP，因为Map没有继承Iterable接口。
+HashMap：存储自定义对象。自定义对象可以是，键也可以是值、
+	当自定义对象作为键出现时，自定义对象必须重写HashCode，才能保证元素的唯一性
+LinkedHashMap : 存取顺序是一致的。
+HashTable: 特点与HashMap一致，区别是线程安全，效率低，被HashMap取代。
+	HashMap：允许存储null值，或者null键
+	HashTable：则不允许
+HashTable的子类：Proterties,依然在使用。
+静态导入： import static java.long.System,out
+	好处：减少代码量。 uot.print();
+可变参数：
+	前提：方法的参数数据类型确定，参数的个数不确定。
+	public static int getSum(int... s){}
+	可变参数，其实是一个数组(s.length),传几个参数长度就是几
+可变参数的注意事项：
+	一个方法中，只能有一个可变参数。（不允许写两个）
+	可变参数，必须写在方法参数列表的最后面。
+	show(Object...);  传什么都可以。
+Collections 集合操做的工具类：全部是静态方法。
+	shot();对List进行排序，（set不可以，没有索引）
+		字符串排序：按照字典进行排序。
+	binarySearch();对list集合进行二分查找，方法参数：List集合，传递被查找的元素。
+		找不到返回 负的插入点减一。
+	shuffle();对集合中的元素进行随机排列。
+集合的嵌套：集合里边也可以放入集合；
+	Map里面存储Map集合：Map<String,Map<String,Integer>> map  = new HashMap<>();
+模拟斗地主：
+	要求：组装扑克牌（需要容器完成数字与牌的映射关系） 
+		 	 每个排和数字进行对应，大王对应了 0;小王对应了1； 
+		 	 一张牌，进对应了数。
+		  	 使用Map :进行对应。 0 - 大王  1 - 小王 ，根据编号就可以进行排序了。
+  		  洗牌：使用suffer();方法进行洗牌，List 集合中存储的是序号，对序号进行打乱。
+  		  发牌：定义三个玩家容器，一个底牌容器。发的是编号，使用short对每个集合的索引进行排序。
+  		  看牌：使用查表法，使用玩家的序号，去Map中找牌。通过key去找值。  		  
+	LinkedHashMap:有序

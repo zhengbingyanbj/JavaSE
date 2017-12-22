@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	dtd约束文档声明
+	
+	1.内部dtd 只对当前xml生效
+	<!DOCTYPE beans [
+	... //具体的语法
+	]>
+	2.外部dtd 本地dtd 
+	<!DOCTYPE beans SYSTEM "bean.dtd">
+	哪个xml文件引用了 就对哪个xml文件生效
+	3.外部dtd 公共dtd
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+		只要有网络 eclipse会自动缓存 
+
+ -->
+ <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<description>描述</description>
+	
+	<import resource=""></import>
+	<bean></bean>
+	
+
+
+
+</beans>

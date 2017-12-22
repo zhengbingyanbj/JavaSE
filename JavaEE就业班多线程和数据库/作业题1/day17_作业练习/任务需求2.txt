@@ -1,0 +1,45 @@
+﻿需求1：SQL约束
+	主键约束的概念：
+		1) SQL语法中如何表示一个字段是主键？ primary(主键) key  
+			
+		2) 主键的作用是什么？ 用于表示数据库表中的数据唯一不重复
+			
+		3) 每个表可以有几个主键?  能有多个 ， 建议有一个主键
+		
+		4) 表中的主键特点是什么？ 主键必须填写 唯一性，
+	
+	如何添加主键约束(练习前两种添加方式)：
+			方式一：创建表时，在字段描述处，声明指定字段为主键
+				示例：CREATE TABLE p1(
+						id int PRIMARY KEY,
+						name varchar(200),
+						idCard varchar(50)
+					 );
+				
+			方式二：创建表时，在constraint约束区域，声明指定字段为主键
+				示例：CREATE TABLE p2	(
+						id int,
+						name varchar(200),
+						idCard varchar(50),
+						PRIMARY KEY (id,name)
+					  );
+										
+			方式三：创建表之后，通过修改表结构，声明指定字段为主键：（了解）
+	
+需求2：自动增长策略简述
+			
+	   2.1:创建一张person表,将主键ID设置为自增类型
+	 		create table person(
+	 			id primary key auto_increment,	
+	 			name varchar(20);
+	 			idCard  varchar(30);
+	 		); 
+	   2.2:向person表中添加2条数据，忽略主键（主键会自动增长）,观察主键变化;		
+			
+	   2.3：请说出：delete和truncate的区别
+		delete 是删除表中的数据 但不重置auto_increment记录数 效率低 安全 数据可以恢复
+		Truncate  先删除表然后在创建表 效率高不安全 数据不可恢复
+	   		
+	   2.4：修改主键自增的起始值：
+	   		ALTER TABLE p8 AUTO_INCREMENT=1
+		
