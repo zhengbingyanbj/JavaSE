@@ -1,0 +1,57 @@
+
+素材：
+	无
+
+	
+需求：模拟考试卷 
+	做出 “测试案例2效果图” 中效果。
+	
+
+需求分析：
+	1) 按上图输入上面的文字内容。
+	2) 其中1-5题的题号，使用数字有序列表实现
+	3) 每道题的A-D，使用字母有序列表实现。并且是题号1-5的子列表的嵌套
+	4) 题目中出现的”<”或”>”符号，使用转义字符实现。
+	
+	
+代码参考：
+		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+		<html xmlns="http://www.w3.org/1999/xhtml">
+
+			<head>
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+				<title>在线考试试卷</title>
+			</head>
+
+			<body>
+				<h1>HTML在线考试试题</h1>
+				<ol>
+					<li>HTML中，换行使用的标签是（）。
+						<ol type="A">
+							此处填写代码
+						</ol>
+					</li>
+					<li>&lt;img /&gt;标签的（）属性用于指定图像的地址。
+						<ol type="A">
+							此处填写代码
+						</ol>
+					</li>
+					<li>创建一个超级链接使用的是（）标签。
+						<ol type="A">
+							此处填写代码
+						</ol>
+					</li>
+					<li>&lt;img /&gt;标签的（）属性用来设置图片与旁边内容的水平距离。
+						<ol type="A">
+							此处填写代码
+						</ol>
+					</li>
+					<li>下面HTML结构中，不属于列表结构的是（）。
+						<ol type="A">
+							此处填写代码
+						</ol>
+					</li>
+				</ol>
+			</body>
+
+		</html>

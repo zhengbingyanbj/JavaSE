@@ -1,0 +1,154 @@
+
+素材：
+	img图片目录
+
+	
+需求：
+	做出 “练习案例4效果图” 中效果。
+	
+	
+需求分析：	
+	1.创建html:练习案例4.html 
+	2.首页绘制一个7*1的表格用于作为外围的整体结构
+	3.然后给每一行分别添加表格绘制自己的模块有：
+		表格第一行中套个表格: <!--1行3列的表格-->
+		表格第二行中套个表格: <!--1行2列的表格-->
+		表格第三行中套个表格: <!--轮播条，暂时不写,使用一张图片填充-->
+		表格第四行中套个表格: <!--热门商品1,2行7列表格-->
+		表格第五行中套个表格: <!--广告 1列，使用一张图片填充-->
+		表格第六行中套个表格: <!--热门商品2,2行7列表格-->
+		表格第七行中套个表格: <!--底部声明：2行1列的表格-->
+	
+	
+	
+代码参考：
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<title></title>
+		</head>
+		<body>
+			<table width="100%;">
+				<tr>
+					<td>
+						<!--1行3列的表格-->
+						<table  width="100%;">
+							<tr>
+								<td><img src="img/logo2.png" /> </td>
+								<td><img src="img/header.jpg" /> </td>
+								<td align="center">
+									<a href="">登录</a>
+									<a href="">注册</a>
+									<a href="">购物车</a>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<!--1行2列的表格-->
+						<table width="100%;" bgcolor="#000">
+							<tr  height="60">
+								<td>
+									<a href=""><font color="#9d9d9d">首页</font> </a>
+									<a href=""><font color="#fff">手机数码</font> </a>
+									<a href=""><font color="#9d9d9d">电脑办公</font> </a>
+									<a href=""><font color="#9d9d9d">衣服</font> </a>
+									<a href=""><font color="#9d9d9d">海外淘</font> </a>
+									<a href=""><font color="#9d9d9d">奢侈品</font> </a>
+								</td>
+								<td align="right">
+									<font color="#fff">此处应该是表单，稍后完善</font>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<!--轮播条，暂时不写,使用一张图片填充-->
+						<img src="img/1.jpg" width="100%" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<!--热门商品1,2行7列表格-->
+						<table  width="100%;">
+							<tr height="60%">
+								<td rowspan="2"><img src="img/products/big01.jpg" /></td>
+								<td colspan="3"><img src="img/products/middle01.jpg" /></td>
+								<td><img src="img/products/small01.jpg" /></td>
+								<td><img src="img/products/small02.jpg" /></td>
+								<td><img src="img/products/small03.jpg" /></td>
+							</tr>
+							<tr>
+								<td><img src="img/products/small04.jpg" /></td>
+								<td><img src="img/products/small05.jpg" /></td>
+								<td><img src="img/products/small06.jpg" /></td>
+								<td><img src="img/products/small07.jpg" /></td>
+								<td><img src="img/products/small08.jpg" /></td>
+								<td><img src="img/products/small09.jpg" /></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="img/products/ad.jpg" />
+					</td><!--广告-->
+				</tr>
+				<tr>
+					<td>
+						<!--热门商品2,2行7列表格-->
+						<table  width="100%;">
+							<tr height="60%">
+								<td rowspan="2"><img src="img/products/big01.jpg" /></td>
+								<td colspan="3"><img src="img/products/middle01.jpg" /></td>
+								<td><img src="img/products/small01.jpg" /></td>
+								<td><img src="img/products/small02.jpg" /></td>
+								<td><img src="img/products/small03.jpg" /></td>
+							</tr>
+							<tr>
+								<td><img src="img/products/small04.jpg" /></td>
+								<td><img src="img/products/small05.jpg" /></td>
+								<td><img src="img/products/small06.jpg" /></td>
+								<td><img src="img/products/small07.jpg" /></td>
+								<td><img src="img/products/small08.jpg" /></td>
+								<td><img src="img/products/small09.jpg" /></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<!--2行1列的表格-->
+						<table  width="100%;">
+							<tr>
+								<td><img src="img/footer.jpg" /> </td>
+							</tr>
+							<tr>
+								<td align="center">
+									<p>
+										<a href="http://www.itcast.cn">关于我们 </a>
+										<a href="">联系我们 </a>
+										<a href="">招贤纳士 </a>
+										<a href="">法律声明 </a>
+										<a href="http://www.itheima.com">友情链接 </a>
+										<a href="">支付方式 </a>
+										<a href="">配送方式 </a>
+										<a href="">服务声明 </a>
+										<a href="">广告声明</a>
+									</p>
+									<p>
+										Copyright © 2005-2016 传智商城 版权所有
+									</p>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</body>
+	</html>
+

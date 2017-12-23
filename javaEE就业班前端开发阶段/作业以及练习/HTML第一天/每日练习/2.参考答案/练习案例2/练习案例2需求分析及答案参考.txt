@@ -1,0 +1,26 @@
+
+素材：
+	img目录图片
+
+	
+需求：
+	做出 “练习案例2效果图” 中效果。
+	
+	
+需求分析：	
+	1.创建html:练习案例2.html 
+	2.使用图片标签<img>标签的src属性引入图片
+	
+	
+代码参考：
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<title></title>
+		</head>
+		<body>
+			<img src="img/logo2.png" height="50" width="200"/>
+			<img src="img/header.jpg" height="50" width="250"/>
+		</body>
+	</html> 

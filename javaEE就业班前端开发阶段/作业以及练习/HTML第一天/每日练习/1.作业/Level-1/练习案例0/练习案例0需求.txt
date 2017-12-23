@@ -1,0 +1,96 @@
+﻿
+简答题：
+	1、html简述：
+		01、html是什么？
+		html是一种超文本标记语言
+		
+		02、html能做什么？
+		html是用来编写网页的
+
+		
+		03、html书写规范？
+		head 标签内写整个页面展示的内容
+		body 标签内写需要展示的信息
+		
+		04、html入门示例？
+			<html>
+			<head></head>
+			<body>
+			                   <!--将部分文字的颜色改成指定颜色-->	
+				我请大家吃狗不理<font color="red" size="5">包子</font>，
+				<br/>   《！-- br是换行符--》
+				大家很高兴！！！
+			</body>
+		</html>	
+		
+	
+	2、html基本标签及其常用属性格式书写：
+		01、文件标签(结构标签)有哪些？
+				根标签： <html></html>
+				头：<title></title>
+				体：<body></body>
+		
+		02、排版标签？
+				注释标签：<!---->
+				换行标签：<br />
+				段落标签：<p>文本文字</p>
+					属性：   align对其方式（有三个属性值：left  center right）
+				水平线标签：<hr/>
+					属性：
+			
+		
+		03、文字标签？
+				基本文字标签：<font></font>
+					属性： color颜色   size大小 。 face 字体类型 
+				标题标签：<h1></h1>----<h6></h6>
+		
+		04、清单标签（也称为列表标签）？
+				无序列表：  <ul></ul>
+					列表项： <li></li>
+					属性： type 有三个值  分别为disc实心圆  circle空心圆  和 square实心方框
+					示例： <ul>
+						这种天写列表项 比如： <li></li>
+						</ul>
+			
+				有序列表： <ol></ol>
+					列表项：<li></li>
+					属性：	type  1 A a I i （数字 字母 罗马数字）
+					示例： start 数字， 代表首项开始位置
+		
+		05、图形标签（自关闭标签） src图形地址   width宽度   heiht高度  horder边框  align对齐方式  代表图片与相邻的文本的相对位置（有三个属性 top  middle  bottom）alt 图片的文字说明
+				格式：<img src="图片地址" width="图片大小" alt="图片描述" align="图片对齐" />
+				属性：
+		
+		06、链接标签？	href 跳转页面地址， name名称锚点   target_self （自己）_blank（新页面之前的页面还有）默认的是self
+				
+				格式：<a href="这里输入需要跳转的地址" target="_blank">这里输入提示是跳转到哪里去</a>
+				属性：
+		
+		07、表格标签？
+				格式： <tr>
+					<th>这里写内容</th>
+					</tr>
+				属性：horder 表格边框   width 表格宽度   align 表格的对齐方式  bgcolor 背景颜色
+				代表行：<tr></tr>
+				代表单元格：《td》《/td》
+					属性：
+						列合并：colspan	列合并
+						行合并：rowspan 行合并
+				示例：
+		
+		08、框架标签？
+				格式：
+				属性：
+					按行划分：rows	按行划分
+					按列划分：cols  按列划分
+					划分格式：百分比，  固定像素， *代表剩余所有
+				示例：		
+		
+		09、特殊字符？
+				空格： &nbsp
+				大于号： &gt
+				小于号： &lt
+				版权符号： &copy
+				注册符号： &reg
+		
+	

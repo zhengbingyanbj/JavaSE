@@ -1,0 +1,70 @@
+
+素材：
+	img图片目录
+
+	
+需求：
+	做出 “练习案例5效果图” 中效果。
+	
+	
+需求分析：	
+	1.创建html:练习案例5.html 
+	2.使用 frameset 将页面分为上下两部分，比例 上：15%
+	3.使用 frameset 将页面分为下部分在分为左右两部分，比例 下左：15%
+	4、frameset框架 上部分中 引入 top.html,在top.html中写一句话：网站头部
+	4、frameset框架 下左部分中 引入 left.html,在left.html中写一句话：网站主体左部
+	4、frameset框架 下右部分中 引入 right.html,在right.html中写一句话：网站主体右部
+	
+	
+代码参考：
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<title></title>
+		</head>
+		<frameset rows="15%,*">
+			<frame  src="top.html" name="top"/>
+			<frameset cols="15%,*">
+				<frame  src="left.html" name="left"/>
+				<frame  src="right.html" name="right"/>
+			</frameset>
+		</frameset>
+	</html>
+	
+	top.html：
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<title></title>
+		</head>
+		<body>
+			<h1>网站头部</h1>
+		</body>
+	</html>
+	
+	left.html：
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<title></title>
+		</head>
+		<body>
+			<h1>网站主体左部</h1>
+		</body>
+	</html>
+	
+	right.html：
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<title></title>
+		</head>
+		<body>
+			<h1>网站主体右部</h1>
+		</body>
+	</html>
+
