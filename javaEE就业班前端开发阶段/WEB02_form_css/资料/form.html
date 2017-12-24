@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+        	表单标签
+        		form
+        			仅仅代表一个表单
+        			属性：
+        				name:代表表单的名称
+        				action:该表单的提交的地址
+        				method:提交方式 很多种 常用两种 get post
+        					get：get提交请求参数 会在url地址后面拼接  格式： url?name=value&name=value... ...
+        					post：post提交 请求的参数在http请求体中
+        				
+        					get与post的比较？(面试/笔试)
+        						1) get提交请求参数在地址栏中  post提交参数http请求体
+        						2) get提交相对不安全 post相对安全
+        						3) get请求提交的数据有大小限制  post没有大小限制
+        		
+        		
+	        		input
+	        			属性：
+	        				type：代表该input的类型 type的属性值不同会导致表单项的样式和功能不同
+	        					值：10个
+	        						text:普通的输入框 (默认值)
+	        						password:密码框 特点：输入内容都是掩码
+	        						radio：单选框 当name相同时radio才能完成互斥的效果
+	        							checked="checked"/true  该项默认被选中
+	        						checkbox：多选框
+	        							checked="checked"/true  该项默认被选中
+	        						button：普通按钮 没有内置功能
+	        						submit：表单提交 当点击时 表单会按照action的地址进行表单提交
+	        						reset：重置按钮 使表单恢复默认状态
+	        						image：图片按钮 内置功能与submit一样
+	        						
+	        						file：文件上传
+	        						hidden：隐藏域  通过页面传值 但是这个值不需要用户看到
+	        						
+	        				name：代表该表单项的名称
+	        					为什么需要name属性？
+	        						?username=tom&gender=male&hobby=football&hobby=yumaoball&upload=&hid=itcast
+	        							username=tom
+	        							gender=male
+	        							hobby=football
+	        							hobby=yumaoball
+	        							hid=itcast
+	        						表单项没有name时 表单项的数据不会提交的服务器端
+	        							提交的数据格式：name=value&name=value... ...
+	        						
+	        				value：代表该表单项的值
+	        				
+	        		select
+	        			仅仅代表一个下拉框/列表
+	        			可选择的项option
+	        				option有一个默认被选中的属性 selected="selected"/true
+	        				注意：select的name=option的value
+	        		textarea
+	        			代表一个文本域 可以输出多行文本
+	        			属性：cols  rows
+	        			
+        -->
+        
+        <form name="myform" action="#" method="get">
+        	
+        	姓名：<input type="text" name="username" value="tom"/><br />
+        	密码：<input type="password" name="password"/><br />
+        	性别：<input type="radio" name="gender" value="male" checked="checked" />男
+        			<input type="radio" name="gender" value="female" />女<br />
+        	爱好：<input type="checkbox" name="hobby" value="football" checked="checked"/>足球
+        			<input type="checkbox" name="hobby" value="basketball" />蓝球
+        			<input type="checkbox" name="hobby" value="yumaoball" checked="checked"/>羽毛球
+        			<br />
+        	普通按钮：<input type="button" value="普通按钮" /><br />
+        	提交按钮：<input type="submit" value="提交按钮" /><br />
+        	重置按钮：<input type="reset" value="重置按钮" /><br />
+        	图片按钮：<input type="image" src="img/btn.jpg"/><br />
+        	文件上传：<input type="file" name="upload" /><br />
+        	隐藏域：<input type="hidden" name="hid" value="itcast" /><br />
+        	
+        	选择城市：
+        		<!-- city=用户选择的option的value -->
+	        	<select name="city">
+	        		<option value="bj">北京</option>
+	        		<option value="sh">上海</option>
+	        		<option value="tj" selected="selected">天津</option>
+	        		<option value="cq">重庆</option>
+	        	</select><br />
+	        
+	        自我介绍：<textarea cols="40" rows="10" name="ta">xxxx</textarea>
+	        
+        	
+        </form>
+        
+        
+	</body>
+</html>

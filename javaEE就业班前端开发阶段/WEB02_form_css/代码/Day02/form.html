@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<!--
+			表单标签
+				form：代表整个表单 
+					属性：name：表单名称
+						action：提交到服务器端路径
+						method：提交方式  属性值有很多  常用的get(默认)和post
+					
+					
+					PS:get和post提交的区别(面试)
+						1、get请求的请求参数在请求地址后携带 格式 提交的地址?username=lisi&password=123&gender=female
+						   post请求的请求参数在http请求体中  格式username=lisi&password=123&gender=female
+						2、get提交行对不安全  post提交相对安全
+						3、提交数据的大小 get有大小限制  post没有大小限制
+						
+			表单项标签
+				input标签
+					属性 
+						name属性：为input表单项命名 表单项的数据如果想进行提交 name属性必须有  提交数据的格式 userrname=zhangsan
+						value属性：代表表单项的值 value在不同的type类型下 具备功能不同
+						type属性：input类型 10个
+							text(默认值):文本输入框	value代表文本框的默认值
+							password:密码框		value代表密码框的默认值
+							radio：单选框
+								组的概念：当radio的name相同时 那么这些单选框属于同一组 具备互斥功能
+								value不是用于显示的  是最终用于数据提交的  gender=选择的那个单选框的value
+								默认被选中 checked属性
+							checkbox：复选框
+								组的概念：checkbox的name相同 代表是同一组  提交数据格式hobby=football&hobby=basketball...
+								默认被选中 checked属性
+							button：普通按钮
+								value是按钮的显示名称
+							submit：提交按钮
+								value是按钮的显示名称
+								提交form表单的数据到服务器端
+							reset：重置按钮
+								value是按钮的显示名称
+							image：图片按钮
+								src属性：指定图片在哪
+							file：文件上传
+							hidden：隐藏域
+								作用：不想让客户端看到 但是服务器需要的数据 
+				select：下拉框
+					结合子标签option
+					提交数据时 是select的name=被选中的option的value
+					默认被选中 selected
+				
+				textarea
+			
+			
+		-->
+		
+		
+		<form name="myform" action="#" method="get">
+			姓名：<input type="text" name="username" value="lisi"/><br/>
+			密码：<input type="password" name="password"/><br/>
+			性别：<input type="radio" name="gender" value="male" />男
+				<input type="radio" name="gender" value="female" checked="checked"/>女
+				<input type="radio" name="gender" value="other"/>其他<br/>
+			爱好：<input type="checkbox" name="hobby" value="football" checked="checked"/>足球
+				<input type="checkbox" name="hobby" value="basketball" checked="checked" />篮球
+				<input type="checkbox" name="hobby" value="volleyball" />排球<br/>
+			普通按钮：<input type="button" value="普通按钮"/><br/>
+			提交按钮：<input type="submit" value="提交按钮"/><br/>
+			重置按钮：<input type="reset" value="重置按钮"/><br/>
+			图片按钮：<input type="image" src="img/btn.jpg"/><br/>
+			文件上传：<input type="file" name="file"/><br/>
+			隐藏域：<input type="hidden" name="hide" value="xxx"/><br/>
+			
+			城市：
+			<select name="city">
+				<option value="">--请选择--</option>
+				<option value="bj">北京</option>
+				<option value="sh">上海</option>
+				<option value="cq">重庆</option>
+				<option value="tj" selected="selected">天津</option>
+			</select><br/>
+			
+			自我介绍：
+			<textarea name="introduction" rows="10" cols="50">xxxx</textarea>
+			
+			
+		</form>
+		
+	</body>
+</html>

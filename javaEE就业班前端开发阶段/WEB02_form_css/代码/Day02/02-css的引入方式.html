@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<!--<style type="text/css">
+			
+			span{
+				color:red;
+				font-size: 30px;
+			}
+			
+		</style>-->
+		
+		
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+		
+	</head>
+	<body>
+		
+		<!--1、内嵌样式：在html标签中使用style属性引入css
+				优点：可读性好
+				缺点：没有复用性
+		-->
+		<!--<span style="color:red;font-size: 30px;">黑马</span>
+		<span style="color:red;font-size: 30px;">黑马</span>-->
+		
+		<!--2、内部样式(常使用)：在一个html中 相同的样式可以进行抽取
+				在head标签中使用style标签引入css
+				优点：在当前页面下具备复用性
+				缺点：可读性差
+		-->
+		<!--<span>黑马</span>
+		<span>黑马</span>-->
+		
+		<!--3、外部样式
+				定义一个css文件 将css样式写进去
+				在需要使用css样式的html中进行引入该css文件
+				css文件引入的语法 在head中使用link标签
+				
+				优点：复用性极高
+				缺点：影响页面加载性能
+			
+		-->
+		<span>黑马</span>
+		<span>黑马</span>
+		
+		
+	</body>
+</html>

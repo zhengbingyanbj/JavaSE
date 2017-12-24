@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			/*需求：将password的背景颜色变为绿色  text的背景颜色变为红色
+			 	
+			 	语法： 基本选择器[属性='属性值'][属性='属性值']...{css样式}
+			 
+			 * */
+			input[type='text']{background: red;}
+			input[type='password']{background: green;}
+			input[type='password'][name='password']{background: pink;}
+			
+		</style>
+		
+	</head>
+	<body>
+		
+		<form action="#" method="post">
+			用户名<input type="text" /><br/>
+			密码<input type="password" name="password"/><br/>
+			重复密码<input type="password" /><br/>
+			<input type="submit" value=""/>
+		</form>
+		
+		
+	</body>
+</html>
