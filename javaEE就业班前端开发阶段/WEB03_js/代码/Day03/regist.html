@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.member1{
+				font-size:18px;
+				color:blue;
+			}
+			.member2{
+				font-size:13px;
+				color:#999;
+			}
+			td{
+				height:35px;
+			}
+			.box{
+				width:500px;
+				height:400px;
+				border:5px solid #999;
+				padding:40px 80px;
+				margin:30px auto;
+				background: #fff;
+			}
+			body{
+				background:url(img/bg.jpg) ;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			
+			function fn1(obj){
+				//获得焦点 提出提示
+				var spanElement = document.getElementById('showInfo');
+				spanElement.innerHTML="请输入用户名";
+				spanElement.style.color="#ccc";
+			}
+			
+			function fn2(obj){
+				var spanElement = document.getElementById('showInfo');
+				//获得当前输入内容 进行长度的判断
+				var inputValue = obj.value;
+				if(inputValue.length<5){
+					spanElement.innerHTML="对不起，您输入的数据不合法";
+					spanElement.style.color="red";
+				}else{
+					spanElement.innerHTML="用户名可用";
+					spanElement.style.color="green";
+				}
+			}
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		<div class="box">
+			<div class="smbox">
+				<table style="width:80%">
+					<tr>
+						<td colspan="3">
+							<span class="member1">会员注册 </span>
+							<span class="member2">USER REGISTER</span>
+						</td>
+					</tr>
+					<tr>
+						<td>用户名</td>
+						<td colspan="2">
+							<input type="text" name="username" placeholder="xxx" onfocus="fn1(this)" onblur="fn2(this)"/>
+							<span id="showInfo"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>密码</td>
+						<td colspan="2">
+							<input type="password" name="password" />
+						</td>
+					</tr>
+					<tr>
+						<td>重复密码</td>
+						<td colspan="2">
+							<input type="password" name="repassword" />
+						</td>
+					</tr>
+					<tr>
+						<td>姓名</td>
+						<td colspan="2">
+							<input type="text" name="name" />
+						</td>
+					</tr>
+					<tr>
+						<td>邮箱</td>
+						<td colspan="2">
+							<input type="text" name="email" />
+						</td>
+					</tr>
+					<tr>
+						<td>性别</td>
+						<td colspan="2">
+							<input type="radio" name="gender" value="male"/>男
+							<input type="radio" name="gender" value="female"/>女
+						</td>
+					</tr>
+					<tr>
+						<td>生日</td>
+						<td colspan="2">
+							<input type="text" name="birthday" />
+						</td>
+					</tr>
+					<tr>
+						<td>验证码</td>
+						<td><input type="text" name="checkcode" /></td>
+						<td>
+							<img src="img/checkcode.jpg" />
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<input type="image" src="img/btn.jpg" />
+						</td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

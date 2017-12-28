@@ -1,0 +1,40 @@
+需求：
+	回顾当天知识点
+		1.什么是JavaScript?
+			
+		2.JavaScript由哪几部分组成？
+			
+		3.JavaScript有什么作用？
+			
+		4.怎样引入JavaScript？
+			
+		5.在JavaScript中怎样定义变量？
+			
+		6.JavaScript中有哪几种数据类型？
+			
+		7.比较运算符==和===有什么区别？
+			
+		8.在JavaScript基本操作中alert()和innerHTML作用分别是什么？
+			
+		9.JavaScript中正则表达式的匹配方式有哪两种？
+			
+		10.JavaScript中函数是怎样定义和使用的？
+			
+		11.常见的BOM对象有哪些？
+			
+		12.window对象中定时器setInterval是怎样使用的？
+			
+		13.window对象中定时器setTimeout的使用方法是怎样的？
+			
+		14.怎样取消定时器？
+			
+		15.怎样通过JavaScript获取样式或修改样式？
+			
+		16.常见消息框有哪几种？怎样实现？
+			
+		17.Location对象和History对象中有哪些常见用法？
+			
+
+
+
+			

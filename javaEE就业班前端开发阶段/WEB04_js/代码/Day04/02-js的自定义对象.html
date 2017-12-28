@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			//1、字面量方式
+			/*var person = {
+				name:'zhangsan',
+				age:18,
+				sayHello:function(){
+					return this.name+"========"+this.age;
+				}
+			};
+			
+			//动态扩充属性和方法
+			person.addr = "北京";
+			
+			alert(person.sayHello());
+			alert(person.addr);*/
+			
+			
+			//2、工厂方式
+			/*function personFactory(name,age){
+				var person = {}
+				person.name = name;
+				person.age = age;
+				person.show = function(){
+					return this.name+"===="+this.age;
+				}
+				return person;
+			}
+			
+			var p1 = personFactory('tom',18);
+			var p2 = personFactory('lucy',15);
+			
+			alert(p1.show());
+			alert(p2.show());*/
+			
+			
+			//3、构造器方式 (本质就是定义一个function 约定：函数的名称首字母小写  定义构造器名称首字母大写)
+			/*
+			 * Class User{
+				 
+				 public User(String name,int age){
+				 	this.name=name;
+				 	this.age=age;
+				 }
+			 
+			 * 	 String name;
+			 *   int age;
+			 *   public String show(){
+			 * 		return this.name+"---"+this.age;
+			 * 	 }
+			 * }
+			 * }
+			 */
+			function User(name,age){
+				this.name=name;
+				this.age=age;
+				this.show = function(){
+					return this.name+"----"+this.age;
+				}
+			}
+			
+			var user = new User('zhangsan',50);
+			alert(user.show());
+			
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

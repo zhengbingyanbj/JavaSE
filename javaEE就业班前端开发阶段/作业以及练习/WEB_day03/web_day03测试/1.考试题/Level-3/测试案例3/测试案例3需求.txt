@@ -1,0 +1,40 @@
+需求：
+	如效果图中显示，根据输入的行数和列数。点击生成表格按钮时，生成对应行和列的表格
+需求分析：
+	首先根据html知识完成两个文本框和一个按钮的表单页面，然后
+	1.	为“生成表格”按钮添加点击事件
+	2.	在script标签中定义绑定函数，实现如下功能：
+		2.1	获取用户输入的行和列的值
+		2.2	生成表格
+		2.3	获取div元素，并将表格赋值给div元素
+代码参考：
+ <!DOCTYPE html>
+	 <head>
+	 	<meta charset="UTF-8">
+	 	<script>
+		    function createTable(){
+			    var rows = _____________________________________ //获取行文本框的值
+			    var columns = _____________________________________ //获取列文本框的值
+			    var tab = "<table border='1' bordercolor='blue' cellspacing='0'>";
+			 
+			    for(var i = 0; i < rows; i++){ //遍历生成行
+			    	tab+="<tr>";
+			    	for(var j = 0; j < columns; j++){//遍历生成列
+				   		tab+="<td>传智播客</td>";
+				    }
+			    	tab+="</tr>";
+			    }
+			    tab+="</table>";
+			    var divNode = ___________________________ //获取div节点
+			    divNode.innerHTML = tab; //将tab设置为div节点的文本内容
+		     
+		    }
+    	</script>
+	 </head>
+    <body>
+   	 	行：<input id="row" type="text" />
+    	列：<input id="col" type="text" />
+    	<input type="button" value="生成表格" onclick="createTable()"/>
+    	<div id="divId"></div>
+    </body>
+</html>	

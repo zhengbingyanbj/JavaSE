@@ -1,0 +1,138 @@
+需求：
+	回顾当天知识点：
+		1.标签体内容：innerHTML
+			什么是innerHTML?
+				innerHTML是节点（元素标签）的文本值
+			innerHTML的作用？
+				我们获得节点（元素不标签）后通过调用innerHTML可以获得该标签的文本值
+				或者重新赋值
+				
+			innerHTML的用法
+				获得 document.getElementById("divid").innerHTML
+				设置 document.getELEMENTBYiD("divId").innerHTML = "...."
+				
+		2.相关事件
+			什么是事件？
+				事件 页面上的一个动作
+					可以是客户产生的（按钮单击，获得焦点，失去焦点，表单提交）
+					也可以是浏览器自身产生的（比如 onload）
+			事件的用法？
+				
+				方案1 标签中添加属性  onxxx = "函数名"
+				JS 中编写函数实现
+				方案2 页面加载完 获取标签对象
+				标签对象 onxxx = funtion(){}
+					比较   1  方案1代码简洁 ， 2  方案2 耦合性地
+				
+			常见的事件有哪些？
+				onload 某个页面或者图像被完成加载
+				onsubmit  提交按钮被点击
+				onclick  鼠标双击某个对象
+				onblur  元素失去焦点
+				onfocus 元素获得焦点
+				onchange 用户改变域内容
+				onkeydown 某个键盘的键被按下
+				onkeyup 某个键盘的键被松开
+				onmousedown 某个鼠标按键被按下
+				onmouseup  某个鼠标按键被松开
+				onmouseover 鼠标被移动到某元素之上
+				onmouseout 鼠标从某元素移开
+				onmousemove 鼠标被移动
+		3.相关JS函数this
+			this在js中表示什么意思？
+				在函数内部this表示：当前操作的元素
+				
+		4.单选框复选框相关知识
+			单选框/复选框怎么样表示默认选中？
+				ele.checked 表示元素是否选中， true 表示选中
+				
+		5.js中数组
+			js中数组是怎样定义的？
+				new Array();
+				new Array(size); // size 数组元素个数  数组成员默认值 undefined
+				new Array(element()  element().....)  // 参数列表 为数组初始化数据
+			js中在使用数组时要注意什么？
+				数组中的每一个成员没有类型限制 及可以存放任意类型
+				数据长度可以自动修改 类似java中的list集合等
+				
+
+		6.元素的操作
+			怎样创建元素节点
+				document.createElement()
+			怎样创建文本节点
+				document.createTextNode()
+			怎样向标签体末尾添加新的子节点
+				ele.appendChild()
+			怎样通过id获取元素
+				document.getElementById("id");
+			怎样给元素设置属性？
+				ele.setAttribute(name,value) 给指定的元素设置属性 name 属性名 value 属性值
+		7.DOM树
+			什么是DOM树？
+				DOM Document Object Model 文档对象模型 定义访问和操作结构化文档，（HTML）的方式
+					创建的结构化文档 html xml 等
+				Html DOM 将 整个HTML文档呈现成一颗Dom树  树种有元素 属性 文本等成员 
+				
+			document文档对象
+				什么是document文档对象
+					浏览器加载整个HTML文档形成Document 对象 Document 对象可以访问和操作HTML文档中的所有元素
+				怎样获得document中元素？
+					getElementById() 通过id属性值获得所有元素 （整个Html文档中name可能相同）
+					《xxx name=""》
+					getElementsByName() 通过name属性值获得所有元素（整个HTML文档中name可能相同）
+						<xxx name=””>
+					getElementsByClassName() 通过 class属性值获得所有元素
+						<xxx class=””>
+					getElementsByTagName() 通过标签名获得所有的元素
+				怎样在documnet中创建对象？
+					createElement () 创建指定名称的元素
+					createTextNode 创建指定内容的文本节点
+				document中常见属性有哪些？
+					childNodes 获得所有的子节点
+					nodeName 返回节点名称 （标签名）	
+					nodeType 返回节点类型 （元素 属性文本）		
+					nodevalue 节点的值  （只有文本节点才有该属性）
+					
+			element元素
+				什么是element?
+					Element 对象表示HTML文档中的元素（HTML成为标签） 元素可包含属性 其他元素或文本
+					也就是说HTML标签可以包含属性，其他子标签或文本
+				element中常见的方法有哪些？
+					appendChild() 给元素追加子元素
+						<a>
+							…
+							追加位置
+						</a>
+					insertBefore() 给当前元素前追加兄弟元素
+							插入位置
+						<a>
+					setAttribute(k,v) 给元素设置属性
+						<xxx k=v >
+					
+		8.全局函数
+			js中有哪些常见全局函数？
+					分类  函数名         描述
+					转换  parseFloat()   解析一个字符串并返回一个浮点数
+					      parseInt()     解析一个字符串并返回一个整数
+					执行 eval（）       计算javaScript 字符串 并把他作为脚本来执行
+					编码  encodeURI() 吧字符串编码为 uri
+						decodeURI  解码某个编码uri
+
+				
+
+		
+			
+					
+
+				
+			
+			
+				
+			
+
+
+			
+		
+			
+			
+

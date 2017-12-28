@@ -1,0 +1,70 @@
+
+素材：
+	sucai.html
+
+	
+需求：	填写以下页面代码根据javasprict实现如下效果：
+		当鼠标移动到测试案例二效果图1中“传智播客”链接上时，右侧效果显示区显示说明信息为“高素质软件开发人才培养”，字体为蓝色。如测试案例二效果图2示。
+		同理，当鼠标移动到测试案例二效果图1中“酷丁鱼”上时，说明信息为“酷丁鱼是以“陪伴从心开始”为教育理念,致力于少儿教育新模式的探索,让教育回归本源”，字体为绿色；
+		“黑马程序员”的说明信息为“传智播客（代码：839976）旗下的高端IT教育品牌”，字体颜色为红色。	
+
+需求分析：
+		为“传智播客”、“酷丁鱼”、“黑马程序员”三个超链接绑定onMouseOver事件。
+		编写方式，实现效果
+代码参考：
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>鼠标经过链接显示说明信息</title>
+		<style type="text/css">
+			 body {  font-family: "宋体"; font-size: 9pt; margin-top: 0px; margin-left: 0px; margin-right: 0px}
+			 A { COLOR: black; FONT-SIZE: 9pt; FONT-WEIGHT: 400; TEXT-DECORATION: none }
+			 A:hover { COLOR: red; FONT-SIZE: 9pt; FONT-WEIGHT: 400; TEXT-DECORATION: underline }
+			 a:active     { font: 9pt "宋体"; cursor: hand; color: #FF0033 }
+		</style>
+	</head>
+	<body>
+		<table border=1 bordercolor=#000000 borderlight=green style="border-collapse: collapse" cellpadding="0" cellspacing="0">
+		<tr><td align=center><font size=5 color=red face="Arial, Helvetica, sans-serif"><strong>下面为效果显示区!</strong></font></td></tr>
+			<tr>
+				<td align=center>
+					<table border="0">
+						<tr>
+							 <td valign=top width="50">
+								<!-- 分别向以下a标签中添加鼠标移入事件函数名 -->
+								 <a onMouseOver="itcast()" href="http://www.itcast.cn">传智播客</a>
+								 <a onMouseOver="coolfish()" href="http://www.itheima.cn">酷丁鱼</a>
+								 <a onMouseOver="itheima()" href="http://www.itcast.cn">黑马程序员</a>
+							 </td>
+							 <td width="270">
+								<a id="words">把鼠标放在文字链接上，就会出现相应的说明信息.</a>
+							 </td>
+						 </tr>
+					 </table>
+				 </td>
+			</tr>
+		</table>
+		<script>
+			//定义名为description 的数组
+			 var description = new Array();
+			 description[0] = "<font color=blue>高素质软件开发人才培养</font>";
+			 description[1] = "<font color=green><i>酷丁鱼是以“陪伴从心开始”为教育理念,致力于少儿教育新模式的探索,让教育回归本源</i></font>";
+			 description[2] = "<font color=red>传智播客（代码：839976）旗下的高端IT教育品牌</font>";
+			//通过dom树获取到id="words"的要显示说明信息的超链接标签对象words
+			 var words=document.getElementById("words");
+			 function itcast(){
+				//向获取到words对象中添加数组中第一个元素
+			 	words.innerHTML= description[0];
+			 }
+			 function itheima(){
+				//向获取到words对象中添加数组中第三个元素
+			 	words.innerHTML= description[2];
+			 }
+			 function coolfish(){
+				//向获取到words对象中添加数组中第二个元素
+			 	words.innerHTML= description[1];
+			 }
+			 
+		 </script>
+	</body>
+</html>	

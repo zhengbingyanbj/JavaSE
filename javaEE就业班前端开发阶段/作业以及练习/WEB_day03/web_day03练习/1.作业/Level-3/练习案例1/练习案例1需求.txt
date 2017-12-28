@@ -1,0 +1,233 @@
+素材：
+	img图片文件夹
+	products图片文件夹
+需求：
+	实现首页轮播区域每隔3秒自动切换图片的效果
+需求分析：
+	1.编写html首页页面，实现首页显示效果（参考html/css课程内容）
+	2.因为要实现轮播区域图片自动切换效果需要使用JavaScript，并且效果使在页面加载完毕之后进行的。所以在body结束标签后添加script标签
+	在其中完成js代码
+	3.每隔3秒切换一次图片其实是使用了js中的定时器函数setInterval(函数，时间),所以就在js中定义该函数
+		3.1其中函数功能就是实现切换图片，其实切换图片本质上就是改变图片的src路径。这里为了方便实现，我们可以将要切换的图片统一
+		由数字命名，定时器每执行一次就让图片名字中数字自增一次，这样就变成下一张图片了。直到最后一张图片，我们就让数字恢复到第
+		一张图片
+		3.2时间参数我们直接传入3表示每隔3秒执行一次就可以了
+代码参考：
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.header {}
+			
+			.header div {
+				float: left;
+				width: 33.3%;
+				height: 50px;
+			}
+			
+			.header div img {
+				height: 100%;
+			}
+			
+			.menu {
+				background-color: #000;
+				height: 50px;
+				clear: both;
+				border-radius: 5px;
+			}
+			
+			.menu .left {
+				float: left;
+				color: #fff;
+				padding: 0 0 0 10px;
+				/*等效 padding-left : 10px; */
+				line-height: 50px;
+			}
+			
+			.menu .right {
+				float: right;
+				padding: 0 20px 0 0;
+				/*等效 padding-right: 20px;*/
+				line-height: 50px;
+			}
+			
+			.menu .right input {
+				height: 25px;
+			}
+			
+			.lunbo {
+				margin: 20px 0 0 0;
+				/*等效 margin-top : 20px;*/
+			}
+			
+			.lunbo img {
+				width: 100%;
+				height: 290px;
+			}
+			
+			.hot {}
+			
+			.hot .left {
+				float: left;
+				margin-right: 10px;
+				width: 20%;
+			}
+			
+			.hot .right {
+				float: left;
+				width: 78%;
+			}
+			
+			.hot .right .item {
+				float: left;
+				width: 15%;
+				margin: 0 5px;
+				height: 220px;
+			}
+			
+			.hot .right .item img {
+				width: 100%;
+			}
+			
+			.hot .right .first {
+				float: left;
+				width: 48%;
+			}
+		</style>
+	</head>
+
+	<body onload="init()">
+		<!--页面加载成功之后，触发指定的函数-->
+		<!--父容器-->
+		<div style="width:80%;margin:0 auto;">
+			<!-- 将整体自动居中：margin:0 auto;-->
+			<!--header头信息start-->
+			<div class="header">
+				<div>
+					<img src="./img/logo2.png" />
+				</div>
+				<div>
+					<img src="./img/header.jpg" />
+				</div>
+				<div style="line-height: 50px;">
+					<!--行高，用于设置文本上下居中-->
+					<a href="">登录</a>
+					<a href="">注册</a>
+					<a href="">购物车</a>
+				</div>
+			</div>
+			<!--header头信息end-->
+
+			<!--菜单 start-->
+			<div class="menu">
+				<div class="left">
+					<a href="">首页</a>
+					电脑办公 运动户外
+				</div>
+				<div class="right">
+					<input type="text" placeholder="Search" />
+					<input type="submit" />
+				</div>
+			</div>
+			<!--菜单 end-->
+
+			<!--轮播图 start-->
+			<div class="lunbo">
+				<img id="imgId" src="./img/1.jpg" />
+			</div>
+			<!--轮播图 end-->
+
+			<!--热门商品start-->
+			<div class="hot">
+				<div>
+					<h2>热门商品 <img src="./img/title2.jpg" /></h2>
+				</div>
+				<div>
+					<div class="left">
+						<img src="./products/hao/big01.jpg" />
+					</div>
+					<div class="right">
+						<div class="item first">
+							<img src="./products/hao/middle01.jpg" height="220px" />
+						</div>
+						<div class="item">
+							<img src="./products/1/cs10002.jpg" width="150px" />
+							<p align="center">￥998</p>
+							<p>女神带回家</p>
+						</div>
+						<div class="item">
+							<img src="./products/1/cs10002.jpg" width="150px" />
+							<p align="center">￥998</p>
+							<p>女神带回家</p>
+						</div>
+						<div class="item">
+							<img src="./products/1/cs10002.jpg" width="150px" />
+							<p align="center">￥998</p>
+							<p>女神带回家</p>
+						</div>
+						<div class="item">
+							<img src="./products/1/cs10002.jpg" width="150px" />
+							<p align="center">￥998</p>
+							<p>女神带回家</p>
+						</div>
+						<div class="item">
+							<img src="./products/1/cs10002.jpg" width="150px" />
+							<p align="center">￥998</p>
+							<p>女神带回家</p>
+						</div>
+						<div class="item">
+							<img src="./products/1/cs10002.jpg" width="150px" />
+							<p align="center">￥998</p>
+							<p>女神带回家</p>
+						</div>
+						<div class="item">
+							<img src="./products/1/cs10002.jpg" width="150px" />
+							<p align="center">￥998</p>
+							<p>女神带回家</p>
+						</div>
+						<div class="item">
+							<img src="./products/1/cs10002.jpg" width="150px" />
+							<p align="center">￥998</p>
+							<p>女神带回家</p>
+						</div>
+						<div class="item">
+							<img src="./products/1/cs10002.jpg" width="150px" />
+							<p align="center">￥998</p>
+							<p>女神带回家</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--热门商品end-->
+		</div>
+	</body>
+	<script type="text/javascript">
+		// 页面加载后执行初始化，将启用定时器，3秒执行一次指定函数
+
+		/*
+		 * setInterval()
+		 * * 参数1：函数
+		 * 		
+		 * * 参数2：轮回时间，参数1指定函数不断执行间隔时间。单位：毫秒
+		 */
+		var i = 1;
+		//定义定时器，参数1为匿名函数，参数2为3000
+		__________(function() {
+			// 获得图片对象
+			_____________________________
+			//每次执行改变图片的名字
+			if(i <= 2) {
+				i++;
+			} else {
+				i = 1;
+			}
+			// 修改图片src，改变需要实现图片
+			imgId.src = "img/" + i + ".jpg";
+		}, ______);
+	</script>
+
+</html>	
+	

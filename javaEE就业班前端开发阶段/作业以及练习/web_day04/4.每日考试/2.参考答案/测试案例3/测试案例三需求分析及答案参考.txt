@@ -1,0 +1,98 @@
+
+素材：
+	无
+
+	
+需求：	要求在测试案例三效果图1的基础上实现以下功能(基础页面已给出table2.html)：
+	全选：当点击“全选”是所有的复选框被选中；（测试案例三效果图2）
+	不选：当点击“全不选”时，所有的复选框全部不被选中；（测试案例三效果图3）
+	反选：当点击“反选”时，选择复选框的相反的状态。（测试案例三效果图4，5）
+需求分析：
+	1.要先完成图中表格；
+	2.要想在全选框打钩从而给所有多选框打钩，这里我们需要绑定事件来完成，我们可以用点击事件；
+	3.当事件触发时，函数中应该通过dom对象获取到所有的多选框，并获取多选框的checked属性赋值。
+代码参考：
+<!DOCTYPE html>
+<html>
+    <head>
+    		<meta charset="UTF-8">
+    		<script>
+            var checkBoxEle=document.getElementsByTagName('input');
+             
+            //全选
+            function checkAll(obj){
+                for(i=0;i<checkBoxEle.length;i++){
+				//给所有多选框checked属性赋值为true
+                		checkBoxEle[i].checked=true;
+                }
+            }
+             
+            //不选
+            function unchecked(obj){
+                for(i=0;i<checkBoxEle.length;i++){
+				//给所有多选框checked属性赋值为false
+                		checkBoxEle[i].checked=false;
+                }
+             }
+             
+             //反选
+             function checkOthers(obj){
+                for(i=0;i<checkBoxEle.length;i++){
+		    //判断获取到的多选框属性为true则改为false,为false则改为true
+                    if(checkBoxEle[i].checked==true){
+                    		checkBoxEle[i].checked=false;
+                    }else{ 
+                    	checkBoxEle[i].checked=true;
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+    		<table border="1px  soild" cellpadding="0" cellpadding="0" width="700px"> 
+			<tr>
+				<th>
+					<!-- 分别在下列input标签中添加点击事件的函数名 -->
+					<input type="button" value="全选" onclick="checkAll(this)"/>&nbsp;
+        				<input type="button" value="不选" onclick="unchecked(this)"/>&nbsp;
+        				<input type="button" value="反选" onclick="checkOthers(this)"/>
+				</th>
+				<th>分类ID</th>
+				<th>分类名称</th>
+				<th>分类描述</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td align="center"><input type="checkbox" ></td>
+				<td>1</td>
+				<td>手机数码</td>
+				<td>手机数码类商品</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+			<tr>
+				<td align="center"><input type="checkbox" ></td>
+				<td >2</td>
+				<td>电脑办公</td>
+				<td>电脑办公类商品</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+			<tr>
+				<td align="center"><input type="checkbox" ></td>
+				<td>3</td>
+				<td>鞋靴箱包</td>
+				<td>鞋靴箱包类商品</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+			<tr>
+				<td align="center"><input type="checkbox" </td>
+				<td>4</td>
+				<td>家居饰品</td>
+				<td>家居饰品类商品</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+		</table>
+    </body>
+</html>	
+
+
+	

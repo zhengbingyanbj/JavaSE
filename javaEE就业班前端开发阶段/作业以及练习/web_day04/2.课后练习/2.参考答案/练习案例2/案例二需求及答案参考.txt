@@ -1,0 +1,101 @@
+需求：
+	补充一下代码中注释实现如效果图中效果的隔行换色。
+需求分析：
+	1.首先先要通过html一个如效果所示表格；
+	2.其次隔行换色是在页面显示完成后鼠标在不同行移动产生的，所以要对整个页面绑定页面加载事件，对所有行绑定鼠标移入，移出事件；
+	3.绑定事件后根据this对当前行的背景属性进行更改；
+参考代码：
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function() {
+				// 通过程序获得所有tr，然后根据需要给指定的tr添加背景颜色
+
+				//1 通过标签名tr，获得所有的tr
+				var allTr = document.getElementsByTagName("tr");
+				//2 遍历所有tr
+				for(var i = 2; i < allTr.length; i++) {
+					// 3 隔行换色
+					if(i % 2 == 1) {
+						allTr[i].style.backgroundColor = "#FF6537";
+					}
+
+					// 4.1 移上变色--鼠标移上
+					allTr[i].onmouseover = function() {
+						// 获得颜色,存放当前对象的自定义属性上
+						this.setAttribute("bgc", this.style.backgroundColor);
+						// 设置颜色
+						this.style.backgroundColor = "#F9DD58";
+					}
+
+					// 4.2 移上变色--鼠标移出
+					allTr[i].onmouseout = function() {
+						// 还原颜色--从当前对象自定义属性上获得具体颜色
+						this.style.backgroundColor = this.getAttribute("bgc");
+					}
+				}
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<table id="tab1" border="1" width="800" align="center">
+			<tr>
+				<td colspan="5"><input type="button" value="添加" /> <input type="button" value="删除"></td>
+			</tr>
+			<tr style="background-color: #999999;">
+				<th><input type="checkbox"></th>
+				<th>分类ID</th>
+				<th>分类名称</th>
+				<th>分类描述</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>
+				<td>1</td>
+				<td>手机数码</td>
+				<td>手机数码类商品</td>
+				<td>
+					<a href="">修改</a>|
+					<a href="">删除</a>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>
+				<td>2</td>
+				<td>电脑办公</td>
+				<td>电脑办公类商品</td>
+				<td>
+					<a href="">修改</a>|
+					<a href="">删除</a>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>
+				<td>3</td>
+				<td>鞋靴箱包</td>
+				<td>鞋靴箱包类商品</td>
+				<td>
+					<a href="">修改</a>|
+					<a href="">删除</a>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>
+				<td>4</td>
+				<td>家居饰品</td>
+				<td>家居饰品类商品</td>
+				<td>
+					<a href="">修改</a>|
+					<a href="">删除</a>
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

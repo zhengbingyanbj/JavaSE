@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>form.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+	   <form name="form1" action="test.html" method="post" >
+  	   	  <input type="text" name="tname" value="传智播客5周年_1"  id="tid_1"  ><br>
+				  <input type="text" name="tname" value="传智播客5周年_2"  id="tid_2"  ><br>
+				  <input type="text" name="tname" value="传智播客5周年_3"  id="tid_3"  ><br>
+				  <input type="button" name="ok" value="保存1"/>
+  	 </form>
+	   
+	   <select name="edu" id="edu">
+	   	  <option value="博士">博士^^^^^</option>
+			  <option value="硕士" selected="selected">硕士^^^^^</option>
+			  <option value="本科" >本科^^^^^</option>
+			  <option value="幼儿园">幼儿园^^^^^</option>
+	   </select>
+	   
+	   <select name="job" id="job" >
+	   	  <option value="美容">美容^^^^^</option>
+			  <option value="IT">IT^^^^^</option>
+			  <option value="程序员">程序员^^^^^</option>
+			  <option value="建筑师">建筑师^^^^^</option>
+	   </select>
+	   
+	   
+	   <input id="btn" type="button" value="点击获得当前被选中的option的value值" />
+	   
+  </body>
+  
+  <script language="JavaScript">
+    //获取所有的input元素,返回值是数组
+    var inputs = document.getElementsByTagName('input');
+    
+		//测试长度
+		//alert(inputs.length);
+		
+    //遍历value的值
+    /*for(var i=0;i<inputs.length;i++){
+    	alert(inputs[i].value);
+    }*/
+    
+		//输出type="text"中 value属性的值 不包含按钮(button)
+		/*for(var i=0;i<inputs.length;i++){
+    	if(inputs[i].type!='button'){
+    		alert(inputs[i].value);
+    	}
+    }*/
+		
+    //输出所有下拉选 id="edu"中option标签中 value属性的值
+    //获得edu元素对象
+    var eduEle = document.getElementById('edu');
+    //获得edu下的子标签元素
+    /*var eduOptions = eduEle.getElementsByTagName('option');
+    for(var i=0;i<eduOptions.length;i++){
+    	alert(eduOptions[i].value);
+    }*/
+    
+   	//输出所有下拉选select的option标签中value的值
+   	/*var eduOptions = document.getElementsByTagName('option');
+    for(var i=0;i<eduOptions.length;i++){
+    	alert(eduOptions[i].value);
+    }*/
+   
+   	
+  	//输出选中的值
+  	var btn = document.getElementById('btn');
+  	btn.onclick = function(){
+  		var eduOptions = document.getElementsByTagName('option');
+  		for(var i=0;i<eduOptions.length;i++){
+	    	//哪个被选中  selected
+	    	if(eduOptions[i].selected){
+	    		alert(eduOptions[i].value);
+	    	}
+	    }
+  	}
+  	
+  </script>
+  
+  
+  
+  
+</html>

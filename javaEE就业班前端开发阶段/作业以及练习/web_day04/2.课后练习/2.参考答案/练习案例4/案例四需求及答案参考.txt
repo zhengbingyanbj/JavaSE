@@ -1,0 +1,160 @@
+素材：
+	img图片目录
+
+	
+需求：
+	补全一下代码或注释完成 “案例四效果图” 中效果。
+需求解析：
+	1.根据效果图可知，本题是要完成一个省市联动的案例
+	2.在省市联动中我们知道省市这两个文本框实际是两个多选框，其中省的多选框中选项是固定的，而市的多选框呢要根据省的多选框所选的值的不同而改变
+	3.所以说省市这两个多选框是有关系的，有什么关系呢其实就是我们学的二维数组的关系。二维数组中每个索引对应一个数组，而我们这可以理解为一个省对应多个市的数组。
+	4.除了知道二者之间的关系，我们还要知道怎么串联这个关系，这里我们就要用到事件了，是不是我们只要一选择一个新的省就有对应的事在市的多选框中产生？所以这里我们就需要给省的多选框绑定一个改变事件，只要一触发事件我们就可以根据选的省去二维数组中找对应的市。
+	5.找到对应的市，根据dom树我们将市添加进市的多选框中就可以了
+参考代码：
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户注册</title>
+		<style type="text/css">
+			.regist_bg{
+				  background: url(img/regist_bg.jpg) repeat-x ;
+				  width: 100%;
+				  height: 600px;
+				  padding-top: 40px;			/*#1*/
+			}
+			.regist{
+				  border: 7px solid #ccc;
+				  width: 800px;
+				  padding: 40px 0;
+				  padding-left: 80px;
+				  background-color: #fff;
+				  margin-left: 25%;				/*#2*/
+			}
+			input[type="submit"]{
+				background-image: url(img/register.gif);
+				width: 100px; 
+				height: 35px;
+				color: #fff;
+				cursor: pointer;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			// 定义二维数组: 存放数据
+			var arr0 = new Array("市辖区","县");
+			var arr1 = new Array("长春市","四平市","辽源市","通化市");
+			var arr2 = new Array("济南市","淄博市","枣庄市","日照市");
+			var arr3 = new Array("石家庄","廊坊","唐山","承德");
+			var arr4 = new Array("南京市","苏州市","扬州市","泰州市");
+			
+			var arr = new Array(arr0 , arr1, arr2, arr3, arr4);
+			
+			
+			function selectCity(val){
+				//1 获得全中的省value值
+				
+				//2 通过value获得对应的所有的市
+				var allCity = arr[val];
+				
+				//3 遍历所有市，并将所有的市添加都select  -- cityId
+				// 3.1 获得市select
+				var citySelectObj = document.getElementById("cityId");
+				// * 设置默认值
+				citySelectObj.innerHTML = "<option value=''>----请-选-择-市----</option>";
+				
+				// 3.2 遍历所有市，创建市元素，并追加到市select中
+				for(var i = 0 ; i < allCity.length ; i ++){
+					// 创建 option元素
+					var optionObj = document.createElement("option");
+					// 设置 创建文本节点
+					var textObj = document.createTextNode(allCity[i]);
+					// 将文本追加到option中
+					optionObj.appendChild(textObj);
+					
+					// 将 option 追加到select中
+					citySelectObj.appendChild(optionObj);
+				}
+				
+			}
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		<div class="regist_bg">
+			<div class="regist">
+				<form action="../index.html" >
+					<table  width="600" height="350px">
+						<tr>
+							<td colspan="3">
+									<font color="#3164af">会员注册</font> USER REGISTER
+							</td>
+						</tr>
+						<tr>
+							<td align="right">用户名</td>
+							<td colspan="2"><input id="loginnameId" type="text" name="loginname" size="60"/> </td>
+						</tr>
+						<tr>
+							<td align="right">密码</td>
+							<td colspan="2"><input id="loginpwdId" type="password" name="loginpwd" size="60"/> </td>
+						</tr>
+						<tr>
+							<td align="right">确认密码</td>
+							<td colspan="2"><input id="reloginpwdId" type="password" name="reloginpwd" size="60"/> </td>
+						</tr>
+						<tr>
+							<td align="right">Email</td>
+							<td colspan="2"><input id="emailId" type="text" name="email" size="60"/> </td>
+						</tr>
+						<tr>
+							<td align="right">姓名</td>
+							<td colspan="2"><input name="text" name="username" size="60"/> </td>
+						</tr>
+						<tr>
+							<td align="right">性别</td>
+							<td colspan="2">
+								<input type="radio" name="gender" value="男" checked="checked" />男
+								<input type="radio" name="gender" value="女" />女
+							</td>
+						</tr>
+						<tr>
+							<td align="right">出生日期</td>
+							<td colspan="2"><input type="text" name="birthday" size="60"/> </td>
+						</tr>
+						<tr>
+							<td align="right">所在地</td>
+							<td colspan="3">
+								<select id="provinceId" onchange="selectCity(this.value)" style="width:150px">
+									<option value="">----请-选-择-省----</option>
+									<option value="0">北京</option>
+									<option value="1">吉林省</option>
+									<option value="2">山东省</option>
+									<option value="3">河北省</option>
+									<option value="4">江苏省</option>
+								</select>
+								<select id="cityId" style="width:150px">
+									<option value="">----请-选-择-市----</option>
+								</select>
+								
+							</td>
+						</tr>
+						<tr>
+							<td width="80" align="right">验证码</td>
+							<td width="100"><input type="text" name="verifyCode" /> </td>
+							<td><img src="img/captcha.jhtml" width="80" height="20" /> </td>
+						</tr>
+						<tr>
+							<td></td>
+							<td colspan="2">
+								<input type="submit" value="注册" /> 
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+		
+	</body>
+</html>

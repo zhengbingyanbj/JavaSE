@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			//location.href="http://www.baidu.com";
+			
+			
+			var second = 5;
+			//开启定时器
+			setInterval(function(){
+				//业务：每隔1秒种 将5-- 重新设置到span标签体中
+				second--;
+				
+				//判断second是否已经小于等于0
+				if(second<=0){
+					location.href="http://www.baidu.com";
+				}else{
+					//将second设置到span内部
+					var spanElement = document.getElementById('second');
+					spanElement.innerHTML = second;
+				}
+				
+			},1000);
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		
+		恭喜你注册成功，<span id="second" style="color: red;">5</span>秒钟后跳转到首页，如不跳转<a href="http://www.baidu.com">请点击这里</a>
+		
+	</body>
+</html>

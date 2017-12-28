@@ -1,0 +1,44 @@
+需求：
+	如测试案例1效果图1显示实现当点击“计算折扣”按钮时效果图2的效果。
+需求分析：
+	先通过html实现效果1中表单。然后
+	1.	为“计算折扣价”按钮添加点击事件并绑定函数。
+	2.	为各标签添加属性id
+	3.	在script标签中定义1中绑定的函数，实现函数体内容：
+		3.1	根据id获取标签元素的值
+		3.2	根据页面效果拼接结果
+代码参考：
+	
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script language="JavaScript">
+		
+		//计算书本折扣后价格，并弹出提示
+		function getPrice(){
+			//获得书名文本框中内容
+			_________________________________________________________________
+			//获得作者文本框中内容
+			_________________________________________________________________
+			//获得价格文本框中内容
+			_________________________________________________________________
+			//获得折扣文本框中内容
+			_________________________________________________________________
+			//计算折扣后价格
+			var price = ______________________
+			var _alert = "这本书名为《"+book_name+"》，"+book_author+"编著的书，折扣为："+discount+"折，折扣后价格为："+price;
+			alert(_alert);
+		}
+		</script>
+	</head>
+	<body>
+		<form name="myform">
+			书名：<input type="text" name="bookname"  id="bookname"><br/>
+			作者：<input type="text" name="bookauthor"  id="bookauthor"><br/>
+			价格：<input type="text" name="bookprice" id="bookprice"><br/>
+			折扣：<input type="text" name="booksale" id="booksale"><br/>
+			<input type="button" onclick="getPrice()" value="计算折扣价">
+		</form>
+	</body>
+</html>

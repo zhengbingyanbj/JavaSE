@@ -1,0 +1,32 @@
+需求：
+	实现页面5秒后回到主页的效果。
+需求分析：
+	1.页面5秒后执行操作使用了定时器，所以在script中定义定时器即可
+		1.1定时器中参数1是定时器触发时执行的函数。这里即是完成跳转页面的操作
+			1.1.1跳转页面需要使用到location对象的href，我们重写给href赋一个新路径即可
+		1.2定时器中参数2是时间，按毫秒值填即可
+代码参考：
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>浏览器对象</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+	<body>
+		<strong>操作成功!!</strong>
+		<br />
+		<span id="time">5</span>秒后回到主页
+		<a href="http://www.baidu.com">返回</a>
+		<script type="text/javascript">
+			var t = 5;
+			timer = setInterval(refresh, 1000);
+			function refresh() {
+				document.getElementById("time").innerHTML = --t;
+				if (t == 1) {
+					clearInterval(timer);
+					location.href = "http://www.baidu.com";
+				}
+			}
+		</script>
+	</body>
+</html>	

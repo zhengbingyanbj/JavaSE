@@ -1,0 +1,32 @@
+
+素材：
+	img目录图片
+	css样式：
+		<style type="text/css">
+			body {
+				height: 800px;
+			}
+			
+			#divFormId {
+				border: 5px solid #999;
+				width: 550px;
+				margin: 0 auto;
+				padding: 20px;
+				background-color: #fff;
+			}
+			
+			#divbg {
+				background: url(img/regist_bg.jpg);
+				height: 100%;
+				padding-top: 80px;
+			}
+		</style>
+
+		
+需求：注册页面
+	做出 “练习案例1效果图” 中效果。
+	
+
+	
+	
+		

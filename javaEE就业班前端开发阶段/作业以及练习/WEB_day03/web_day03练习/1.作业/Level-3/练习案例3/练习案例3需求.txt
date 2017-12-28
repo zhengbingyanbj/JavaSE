@@ -1,0 +1,89 @@
+素材：
+	img图片文件夹
+	products图片文件夹
+需求：
+	有一用户注册页面如练习案例3效果图1显示，现在要求对用户名进行验证,要求必须填写。效果如练习案例3效果图2显示
+需求分析：
+	
+        1、首先根据效果图1实现注册表单（参考html/css知识）
+	2、对用户名进行验证，其实效果是当点击注册按钮提交表单前出发表单提交事件完成。这里我们需要先给form表单添加一个表单提交事件。
+		2.1现在form标签中添加onsubmit="return 函数名()"
+		2.2再在script标签中定义该函数
+	3、在script标签中定义的函数主要就是获取到用户名输入框中的内容，并对内容进行非空判断。
+		3.1如果为空，就在用户名输入框后添加提示信息并加上样式。同时返回true.表示表单可以提交
+		3.2如果不为空，则返回false,表单不能提交
+代码参考：
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//校验函数
+			function check() {
+				var flag = true;
+				//获得用户文本框对象
+				___________________________________
+				var usernameValue = username.value;
+				//判断用户文本框中内容是否为空
+				______________________
+					flag = false;
+					//获得span标签对象
+					________________________________________
+					//向span标签文本中添加用户名必须填写
+					_________________________________________
+					usernameSpan.style.color = "#FF0000";
+					
+				}
+				return flag;
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<form action="#" method="get" onsubmit="return check()">
+			<table width="500">
+				<tr>
+					<td colspan="3"><b><font color="blue">会员注册</font> USER register </b></td>
+
+				</tr>
+				<tr>
+					<td align="right">用户名</td>
+					<td>
+						<input type="text" id="username" name="username" size="30" />
+					</td>
+					<td><span id="usernameSpan"></span></td>
+				</tr>
+				<tr>
+					<td align="right">密码</td>
+					<td colspan="2">
+						<input type="password" id="userpwdId" name="userpwd" size="30" />
+					</td>
+				</tr>
+
+				<tr>
+					<td align="right">性别</td>
+					<td colspan="2">
+						<input type="radio" name="sex" value="1" checked="checked" /> 男
+						<input type="radio" name="sex" value="0" /> 女
+					</td>
+				</tr>
+
+				<tr>
+					<td align="right">验证码</td>
+					<td><input type="text" name="code" size="10" /></td>
+					<td><img src="img/captcha.jhtml" width="60" heigth="30" /> </td>
+				</tr>
+				<tr>
+					
+					<td colspan="3" align="center">
+						<input type="image" src="img/btn.jpg" />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			/*
+			 * 1---window的弹框的方法
+			 * 
+			 * 1、警示框 alert(提示信息)
+			 * 		没有返回值
+			 * 2、确认框 confirm(提示信息)		使用最多
+			 * 		有返回值
+			 * 		点击是确认 返回true  
+			 * 		点击是取消 返回false
+			 * 
+			 * 3、输入框prompt(提示信息)
+			 * 		有返回值
+			 * 		点击是确认 返回输入框的内容 
+			 * 		点击是取消 返回null
+			 * 
+			 */
+			
+			/*var res = confirm("您确认要删除吗？");
+			if(res){
+				//要删除数据的逻辑
+			}*/
+			
+			/*var res = prompt("请输入您的名称");
+			if(res){
+				//输入框输入内容 并且 点击是确认
+			}else{
+				//没有输入内容 或者 输入内容点击是取消
+			}*/
+			
+			
+			/*
+			 * 2----定时器
+			 * 
+			 * 设置定时器：setTimeout(任务函数，毫秒值)  执行一次的
+			 * 关闭定时器：clearTimeout(指定定时器对象引用)
+			 * 
+			 * 设置定时器：setInterval(任务函数,毫秒值)  执行多次的
+			 * 关闭定时器：clearInterval(指定定时器对象引用)
+			 */
+			
+			/*setTimeout(function(){
+				alert();
+			},3000);*/
+			
+			/*var timer = setInterval(function(){
+				alert();
+			},3000);
+			
+			
+			function closeTimer(){
+				clearInterval(timer);
+			}*/
+			
+			
+			/*
+			 * 3、window常用的全局方法
+			 */
+			var str = "var i=10;var k=5;alert(i+k)";
+			eval(str);
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		
+		<input type="button" value="点击关闭定时器" onclick="closeTimer()" />
+		
+	</body>
+</html>

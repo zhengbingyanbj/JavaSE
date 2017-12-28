@@ -1,0 +1,60 @@
+需求：注册表单校验，补全下面案例中代码或注释，使得程序可以得到 “案例一效果图” 中效果。
+      要求当用户没有输入时输入栏默认显示请输入用户名；
+	  当用户正在输入用户名时，提示用户名必须是字母或数字；
+	  当用户用户名输入完成时，对用户名进行非空校验；
+	  当用户正在输入密码时，提示用户密码长度必须6位；
+	  当用户用密码输入完成时，对用户名进行非空校验；
+需求分析：
+	1.首先观察效果图可知，提示信息要在当前标签后面加，同时对字体颜色有要求
+	2.其次根据题中情况的不同，要做出不同的反馈。这个情况是通过鼠标的获取，失去焦点来判断的。要用到绑定事件
+	3.在事件触发时，向当前标签后面添加信息要用到dom对象的操作
+代码参考：
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function showTips(uid, info) {
+				// 控制后面的span元素：
+				document.getElementById(uid + "span").innerHTML =
+					"<font color='gray'>" + info + "</font>";
+			}
+
+			function checkUsername(uid, info) {
+				// 判断用户名是否为""
+				var uValue = document.getElementById(uid).value;
+				if(uValue == "") {
+					document.getElementById(uid + "span").innerHTML =
+						"<font color='red'>" + info + "</font>";
+				} else {
+					document.getElementById(uid + "span").innerHTML = "";
+				}
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<h1>注册</h1>
+		<table>
+			<tr>
+				<td>用户名</td>
+				<td>
+					<input type="text" id="username" name="username" placeholder="请输入用户名" onfocus="showTips('username','用户名必须是字母或数字')" onblur="checkUsername('username','用户名不能为空！')" />
+					<span id="usernamespan"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>密码</td>
+				<td>
+					<input type="password" id="password" name="password" onfocus="showTips('password','密码长度必须6位')" onblur="checkUsername('password','密码不能为空！')" />
+					<span id="passwordspan"></span>
+				</td>
+			</tr>
+
+		</table>
+	</body>
+
+</html>

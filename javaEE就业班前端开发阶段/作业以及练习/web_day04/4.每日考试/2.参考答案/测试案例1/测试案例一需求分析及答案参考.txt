@@ -1,0 +1,46 @@
+素材：baidu.html	
+需求：根据已给出的页面实现如下效果：
+	当鼠标移入“百度”上时，显示说明信息“百度一下你就知道”，见测试案例一效果图；
+	当鼠标移出“百度”时，隐藏说明信息“百度一下你就知道”。
+需求分析：
+	为超链接“百度”绑定鼠标移入移出事件；
+	编写方法实现效果。
+代码参考：
+	<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			a{
+				text-decoration: none;
+			}
+		</style>
+		<script>
+			function mouseoutfun(){
+				//通过id="ceshi"获得div区域对象
+				var ceshiele=document.getElementById('ceshi');
+				//向获取到的div区域对象加入显示属性，并赋值为none
+				ceshiele.style.display='none';
+				
+			}
+			function mouseoverfun(){
+				//通过id="ceshi"获得div区域对象
+				var ceshiele=document.getElementById('ceshi');
+				//向获取到的div区域对象加入显示属性，并赋值为''
+				ceshiele.style.display='';
+			}
+			
+		</script>
+	</head>
+	<body>
+		<!-- 向a标签中添加鼠标移入、移出事件-->
+		<a href="http://www.baidu.com" onmouseout="mouseoutfun()" onmouseover="mouseoverfun()">百度</a>
+		
+		<div id="ceshi" style="display:none"><a href="#">百度一下你就知道</a></div>
+	</body>
+</html>
+
+
+
+
+
+

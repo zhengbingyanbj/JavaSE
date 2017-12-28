@@ -1,0 +1,86 @@
+﻿	
+需求：
+	补全以下代码实现 “案例三效果图” 中效果。
+需求分析：
+	1.要先完成图中表格；
+	2.要想在全选框打钩从而给所有多选框打钩，这里我们需要绑定事件来完成，我们可以用点击事件；
+	3.当事件触发时，函数中应该通过dom对象获取到所有的多选框，并获取多选框的checked属性赋值。
+参考代码：
+	
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			//全选和全不选
+			function selectAll(obj){
+				// html代码中 <input type="checkbox" checked="checked" 表示选中
+				// js代码中，全选的复选框是否已经选中  obj.checked ,结果是 true 或 false
+				
+				//1 通过class属性值获得所有对象
+				____________________________________________________
+				//2 处理
+				for(var i = 0 ; i < allCheckbox.length ; i ++){
+					// 方式1：如果“全选”全中了，下面的所有checkbox设置true，否则设置false
+					
+					if(___________){	// 优化  if(obj.checked)
+						//下面的所有checkbox设置true
+						____________________________
+					} else {
+						allCheckbox[i].checked = false;
+					}
+					
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<table id="tab1" border="1" width="800" align="center" >
+			<tr>
+				<td colspan="5"><input type="button" value="添加"/> <input type="button" value="删除"></td>
+			</tr>
+			<tr>
+				<!--  添加点击事件   -->
+				<th><input type="checkbox" _____________>全选</th>
+				<th>分类ID</th>
+				<th>分类名称</th>
+				<th>分类描述</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="itemSelect"></td>
+				<td>1</td>
+				<td>手机数码</td>
+				<td>手机数码类商品</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="itemSelect"></td>
+				<td>2</td>
+				<td>电脑办公</td>
+				<td>电脑办公类商品</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="itemSelect"></td>
+				<td>3</td>
+				<td>鞋靴箱包</td>
+				<td>鞋靴箱包类商品</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="itemSelect"></td>
+				<td>4</td>
+				<td>家居饰品</td>
+				<td>家居饰品类商品</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+		</table>
+	</body>
+</html>
+	
+	
+	

@@ -1,0 +1,92 @@
+
+素材：
+	img图片目录、css\dress.css
+
+	
+需求：商品分类
+	做出 “测试案例1效果图” 中效果。
+	
+
+需求分析：
+	1)整体使用一个div进行布局，id名为dress
+	2)使用h3创建每个分类的标题，如：夏季流行
+	3)分类下面使用hr分隔
+	4)小的分类使用div，中间每一个小项是一个链接
+	5)大的容器dress，宽320px，行高25px，字体大小12px
+	6)h3的样式：字体16px，文本缩进40px，高40px，行高40px
+	7)每个分类标题分别使用不同的背景图片，左上角0px 0px，不平铺
+	8)小的分类中的链接样式使用颜色黑色，没有下划线。鼠标移上去，颜色变成#F60，加下划线。
+	
+	
+代码参考：
+		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+		<html xmlns="http://www.w3.org/1999/xhtml">
+
+			<head>
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+				<title>淘宝女装分类页面</title>
+				此处填写代码（引入外部css）
+			</head>
+
+			<body>
+				<div id="dress">
+					<h3 class="dress01">夏季流行</h3>
+					<hr/>
+					<div class="dressList">
+						<a href="#">夏季新品</a>
+						<a href="#">雪纺裙</a>
+						<a href="#">短袖T</a>
+						<a href="#">铅笔裤</a>
+						<a href="#">短裤</a>
+						<a href="#">短袖衬衫</a>
+						<a href="#">小脚牛仔裤</a>
+						<a href="#">开衫</a>
+						<a href="#">蕾丝/雪纺衫</a>
+						<a href="#">韩版外套</a>
+						<a href="#">小西装</a>
+						<a href="#">中长款裙</a>
+					</div>
+					<h3 class="dress02">上装</h3>
+					<hr/>
+					<div class="dressList">
+						此处填写代码
+					</div>
+					<h3 class="dress03">裙子</h3>
+					<hr/>
+					<div class="dressList">
+						<a href="#">连衣裙</a>
+						<a href="#">半身裙</a>
+						<a href="#">长裙</a>
+						<a href="#">短袖裙</a>
+						<a href="#">蕾丝连衣裙</a>
+						<a href="#">长袖裙</a>
+						<a href="#">无袖/背心裙</a>
+						<a href="#">A字裙</a>
+						<a href="#">牛仔裙</a>
+						<a href="#">半身中长裙</a>
+						<a href="#">半身短裙</a>
+						<a href="#">包臀裙</a>
+					</div>
+					<h3 class="dress04">裤子</h3>
+					<hr/>
+					<div class="dressList">
+						<a href="#">裤子</a>
+						<a href="#">休闲裤</a>
+						<a href="#">牛仔裤</a>
+						<a href="#">打底裤</a>
+						<a href="#">长裤</a>
+						<a href="#">哈伦裤</a>
+						<a href="#">阔腿裤</a>
+						<a href="#">短裤/热裤</a>
+						<a href="#">连体裤</a>
+						<a href="#">七/九分裤</a>
+						<a href="#">牛仔短裤</a>
+						<a href="#">西装裤</a>
+					</div>
+					<h3 class="dress05">其他女装</h3>
+					<hr/>
+					此处填写代码
+				</div>
+			</body>
+
+		</html>

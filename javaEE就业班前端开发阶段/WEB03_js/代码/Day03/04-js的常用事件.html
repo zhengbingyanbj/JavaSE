@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			function fn1(){
+				alert();
+			}
+			
+			function fn2(obj){
+				obj.value="";
+			}
+			
+			function fn3(obj){
+				obj.value="请输入用户名";
+			}
+			
+		</script>
+		
+	</head>
+	<body>
+		
+		<!-- this代表当前input元素对象 -->
+		<input type="text" value="请输入用户名" onfocus="fn2(this)" onblur="fn3(this)"/>
+		
+		<input type="button" value="点击弹出框" onclick="fn1()" />
+		
+	</body>
+</html>

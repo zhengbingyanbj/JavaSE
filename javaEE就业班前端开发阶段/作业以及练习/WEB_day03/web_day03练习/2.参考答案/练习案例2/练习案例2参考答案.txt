@@ -1,0 +1,195 @@
+素材：
+	img图片文件夹
+	products图片文件夹
+需求：
+	实现首页一打开5秒后显示广告，然后5秒后在隐藏广告的效果。
+需求分析：
+	
+        1、在页面中设置一个广告，只是一开始时隐藏的（其实就是一个广告图片放入到div中）
+        2、页面加载完，开启一个一次性计时器，隔 5000 毫秒后，触发一个函数
+        3、函数要获取广告的 div，将 CSS 属性 display 修改为 block
+        4、显示完成再设置计时器
+代码参考：
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+        	1、整个页面布局，一个表格，这个表格 7 行，每一行只有1列
+        	2、第2,3,5,6,7 行一个单元格存储内容
+        	3、第1行 ---- 单元格嵌套一个表格，表格中1行3列
+        	4、第4行 ---- 
+        -->
+        
+	</head>
+	<body>
+		<table  cellpadding="0px" cellspacing="0px" width="90%" align="center">
+			<tr>
+				<td>
+					<div id="show" style="display: none;">
+						<img src="img/ad.jpg" width="100%"/>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="100%">
+						<tr>
+							<td><img src="img/logo2.png" /></td>
+							<td><img src="img/header.jpg" /></td>
+							<td align="right"><a href="#">登陆</a>|
+								<a href="#">注册</a>|
+								<a href="#">购物车</a>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td bgcolor="#1B6D85">
+					<a href="#">首页</a>
+					<a href="#">手机商城</a>
+					<a href="#">电脑商城</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img id="lunbo" src="img/1.jpg" width="100%" />
+				</td>
+			</tr>
+			<tr>
+				<!--
+                	嵌套一个表格
+                	1、3行7列
+                	2、第一行的第一列跨 7 列
+                	3、第二行的第一列跨两行
+                	4、第二行的第二列跨3列
+                -->
+				<td>
+					<table  cellpadding="0px" cellspacing="0px" width="100%">
+						<tr>
+							<td colspan="7">
+								<font size="6">热门商品</font>
+								<img src="img/title2.jpg" />
+							</td>
+							
+						</tr>
+						<tr>
+							<td rowspan="2">
+								<img src="products/hao/big01.jpg" />
+							</td>
+							<td colspan="3">
+								<img src="products/hao/middle01.jpg" />
+							</td>
+							
+							<td align="center">
+								<img src="products/hao/small03.jpg" />
+								<br />
+								<a href="#">高压锅</a>
+								<br />
+								<font color="red">￥299</font>
+							</td>
+							<td align="center">
+								<img src="products/hao/small03.jpg" />
+								<br />
+								<a href="#">高压锅</a>
+								<br />
+								<font color="red">￥299</font>
+							</td>
+							<td align="center">
+								<img src="products/hao/small03.jpg" />
+								<br />
+								<a href="#">高压锅</a>
+								<br />
+								<font color="red">￥299</font>
+							</td>
+						</tr>
+						<tr>
+							
+							<td align="center">
+								<img src="products/hao/small03.jpg" />
+								<br />
+								<a href="#">高压锅</a>
+								<br />
+								<font color="red">￥299</font>
+							</td>
+							<td align="center">
+								<img src="products/hao/small03.jpg" />
+								<br />
+								<a href="#">高压锅</a>
+								<br />
+								<font color="red">￥299</font>
+							</td>
+							<td align="center">
+								<img src="products/hao/small03.jpg" />
+								<br />
+								<a href="#">高压锅</a>
+								<br />
+								<font color="red">￥299</font>
+							</td>
+							<td align="center">
+								<img src="products/hao/small03.jpg" />
+								<br />
+								<a href="#">高压锅</a>
+								<br />
+								<font color="red">￥299</font>
+							</td>
+							<td align="center">
+								<img src="products/hao/small03.jpg" />
+								<br />
+								<a href="#">高压锅</a>
+								<br />
+								<font color="red">￥299</font>
+							</td>
+							<td align="center">
+								<img src="products/hao/small03.jpg" />
+								<br />
+								<a href="#">高压锅</a>
+								<br />
+								<font color="red">￥299</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td><img src="products/hao/ad.jpg" width="100%" /></td>
+			</tr>
+			<tr>
+				<td>
+					<img src="img/footer.jpg" width="100%" />
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<a href="#">联系我们</a>|
+					<a href="#">招聘信息</a>|
+					<a href="#">举报电话</a>|
+					<a href="#">呵呵呵呵</a>|
+					<a href="#">版权声明</a>
+					<br />
+					copay right 传智播客
+					  
+				</td>
+			</tr>
+		</table>
+	</body>
+	<script>
+        	 
+        	 	window.setTimeout(function(){
+        	 		//获得div对象
+        	 		var show = document.getElementById("show");
+        	 		//将div样式设置为显示
+        	 		show.style.display = "block";
+        	 		//显示完成再设置计时器
+        	 		window.setTimeout(function(){
+        	 			//设置回隐藏
+        	 			show.style.display = "none";
+        	 		},5000);
+        	 	},5000);
+        	 
+        </script>
+</html>
+
+	
